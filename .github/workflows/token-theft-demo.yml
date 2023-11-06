@@ -16,12 +16,12 @@ jobs:
       - name: Azure AD Workload Identity Federation
         uses: nicolonsky/WIF@v0.0.1
         with:
-          tenant_id: ${{ secrets.TenantId }}
-          client_id: ${{ secrets.ClientId }}
+          tenant_id: ${{ secrets.TENANTID }}
+          client_id: ${{ secrets.CLIENTID }}
       - name: Do some Stuff
         run: |
           Install-Module -Name Microsoft.Graph.Authentication
-          Connect-MgGraph -AccessToken $env:ACCESS_TOKEN
+          Connect-MgGraph -AccessToken ($env:ACCESS_TOKEN | ConvertTo-SecureString -AsPlainText -Force)
           Invoke-MgGraphRequest -Uri '/beta/organization' | Select-Object -ExpandProperty value
         shell: pwsh
       - name: Do evil stuff
