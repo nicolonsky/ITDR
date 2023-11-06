@@ -1,11 +1,14 @@
 # ITDR - Identity Threat Detection and Response
 
-Identity Threat Detection and Response resources:
+Collection of Microsoft Identity Threat Detection and Response resources:
 
-- Detection Rules
+- Detection and Hunting Rules
 - Playbooks
-- Demos and examples
+- Demos and examples for attack techniques
+- Other ITDR related stuff around Microsoft Identity related security.
 
-Other ITDR related stuff around Microsoft Identity related security.
+Keep in mind that this is a work in progress and will be updated frequently.
 
-![_f40f795c-3735-4fed-9b99-2a20ac891c8e](https://github.com/nicolonsky/ITDR/assets/32899754/b668e982-def2-4978-b892-c924a27bb8fe)
+// Kudos to the detection templates: [@falconforceteam](https://twitter.com/falconforceteam) (Twitter) / [FalconForce](https://github.com/falconforceteam) (GitHub).
+
+![DALL·E Logo](Assets/logo.jpeg)
