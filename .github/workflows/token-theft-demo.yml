@@ -34,7 +34,7 @@ jobs:
         with:
           client-id: ${{ secrets.CLIENTID }}
           tenant-id: ${{ secrets.TENANTID }}
-          subscription: ${{ secrets.SUBSCRIPTION }}
+          subscription-id: ${{ secrets.SUBSCRIPTION }}
       - name: Do more evil stuff
         uses: azure/CLI@v1
         with:
