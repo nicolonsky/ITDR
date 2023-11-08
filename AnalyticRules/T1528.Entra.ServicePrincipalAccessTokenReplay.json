@@ -1,0 +1,87 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspace": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/4898e2f0-626f-4524-b5b0-2bc73954e672')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/4898e2f0-626f-4524-b5b0-2bc73954e672')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
+            "kind": "Scheduled",
+            "apiVersion": "2022-11-01-preview",
+            "properties": {
+                "displayName": "Workload Identity Access Token Replay",
+                "description": "Suspicious Entra Workload Identity access token replay due token replay.",
+                "severity": "Medium",
+                "enabled": true,
+                "query": "// Hunt for differences between the token issuance and token usage of entra service principals based on the public IP address\nlet lookback = 30d;\nunion\n    (MicrosoftGraphActivityLogs\n    | where ResponseStatusCode between (100 .. 300) // only include HTTP success status codes\n    | extend UniqueTokenIdentifier = SignInActivityId\n    | extend ActivityIPAddress = IPAddress\n    ),\n    (AzureActivity\n    | extend UniqueTokenIdentifier = tostring(Claims_d.uti)\n    | extend ActivityIPAddress = CallerIpAddress\n    )\n| where ingestion_time() > ago(lookback)\n| lookup kind=leftouter AADServicePrincipalSignInLogs on UniqueTokenIdentifier\n| extend SigninInIPAddress = IPAddress1\n| where SigninInIPAddress != ActivityIPAddress\n| where isnotempty(SigninInIPAddress)\n| project-away *1\n| project\n    TimeGenerated,\n    ServicePrincipalName,\n    SigninInIPAddress,\n    ActivityIPAddress,\n    ServicePrincipalId,\n    ServicePrincipalCredentialThumbprint,\n    ServicePrincipalCredentialKeyId",
+                "queryFrequency": "PT5M",
+                "queryPeriod": "PT20M",
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "suppressionDuration": "PT5H",
+                "suppressionEnabled": false,
+                "startTimeUtc": null,
+                "tactics": [
+                    "CredentialAccess"
+                ],
+                "techniques": [
+                    "T1528"
+                ],
+                "alertRuleTemplateName": null,
+                "incidentConfiguration": {
+                    "createIncident": true,
+                    "groupingConfiguration": {
+                        "enabled": false,
+                        "reopenClosedIncident": false,
+                        "lookbackDuration": "PT5H",
+                        "matchingMethod": "AllEntities",
+                        "groupByEntities": [],
+                        "groupByAlertDetails": [],
+                        "groupByCustomDetails": []
+                    }
+                },
+                "eventGroupingSettings": {
+                    "aggregationKind": "AlertPerResult"
+                },
+                "alertDetailsOverride": {
+                    "alertDisplayNameFormat": "Workload Identity Access Token Replay from {{ActivityIPAddress}}",
+                    "alertDescriptionFormat": "The access token for the workload identity: {{ServicePrincipalName}} was acquired by the public IP address: {{SigninInIPAddress}} and activity performed by the public IP address: {{ActivityIPAddress}} .",
+                    "alertDynamicProperties": []
+                },
+                "customDetails": {
+                    "ServicePrincipalName": "ServicePrincipalName",
+                    "CredentialKeyId": "ServicePrincipalCredentialKeyId",
+                    "CredentialThumbprint": "ServicePrincipalCredentialThumbprint",
+                    "ObjectId": "ServicePrincipalId"
+                },
+                "entityMappings": [
+                    {
+                        "entityType": "IP",
+                        "fieldMappings": [
+                            {
+                                "identifier": "Address",
+                                "columnName": "ActivityIPAddress"
+                            }
+                        ]
+                    },
+                    {
+                        "entityType": "IP",
+                        "fieldMappings": [
+                            {
+                                "identifier": "Address",
+                                "columnName": "SigninInIPAddress"
+                            }
+                        ]
+                    }
+                ],
+                "sentinelEntitiesMappings": null,
+                "templateVersion": null
+            }
+        }
+    ]
+}

