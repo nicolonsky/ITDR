@@ -55,7 +55,6 @@
                 },
                 "customDetails": {
                     "ServicePrincipalName": "ServicePrincipalName",
-                    "RequestUri": "RequestUri",
                     "CredentialKeyId": "ServicePrincipalCredentialKeyId",
                     "CredentialThumbprint": "ServicePrincipalCredentialThumbprint",
                     "ObjectId": "ServicePrincipalId"
