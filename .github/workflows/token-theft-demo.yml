@@ -42,6 +42,7 @@ jobs:
         with:
           inlineScript: |
             [Environment]::SetEnvironmentVariable('AZ_ACCESS_TOKEN',$(Get-AzAccessToken))
+          azPSVersion: "latest"
   
       - name: Do more evil stuff
         run: |
