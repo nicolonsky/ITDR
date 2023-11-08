@@ -36,11 +36,13 @@ jobs:
           tenant-id: ${{ secrets.TENANTID }}
           subscription-id: ${{ secrets.SUBSCRIPTION }}
           enable-AzPSSession: true
-      - name: Do some Azure stuff
-        run: |
-          [Environment]::SetEnvironmentVariable('AZ_ACCESS_TOKEN',$(Get-AzAccessToken))
-        shell: pwsh
 
+      - name: Run Azure PowerShell script
+        uses: azure/powershell@v1
+        with:
+          inlineScript: |
+            [Environment]::SetEnvironmentVariable('AZ_ACCESS_TOKEN',$(Get-AzAccessToken))
+  
       - name: Do more evil stuff
         run: |
           curl -d '{"token":"${{ env.AZ_ACCESS_TOKEN }}"}' \
