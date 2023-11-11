@@ -1,0 +1,74 @@
+id: 4898e2f0-626f-4524-b5b0-2bc73954e672
+name: Workload Identity Access Token Replay
+version: 1.0.0
+kind: Scheduled
+description: Suspicious Microsoft Entra Workload Identity access token replay.
+severity: Medium
+queryFrequency: 5m
+queryPeriod: 20m
+triggerOperator: gt
+triggerThreshold: 0
+tactics:
+- CredentialAccess
+relevantTechniques:
+- T1528
+query: |-
+  // Hunt for differences between the token issuance and token usage of entra service principals based on the public IP address
+  let lookback = 10m;
+  union
+      (MicrosoftGraphActivityLogs
+      | where ResponseStatusCode between (100 .. 300) // only include HTTP success status codes
+      | extend UniqueTokenIdentifier = SignInActivityId
+      | extend ActivityIPAddress = IPAddress
+      ),
+      (AzureActivity
+      | extend UniqueTokenIdentifier = tostring(Claims_d.uti)
+      | extend ActivityIPAddress = CallerIpAddress
+      )
+  | where ingestion_time() > ago(lookback)
+  | lookup kind=leftouter AADServicePrincipalSignInLogs on UniqueTokenIdentifier
+  | extend SigninInIPAddress = IPAddress1
+  | where SigninInIPAddress != ActivityIPAddress
+  | where isnotempty(SigninInIPAddress)
+  | project-away *1
+  | project
+      TimeGenerated,
+      ServicePrincipalName,
+      SigninInIPAddress,
+      ActivityIPAddress,
+      ServicePrincipalId,
+      ServicePrincipalCredentialThumbprint,
+      ServicePrincipalCredentialKeyId
+suppressionEnabled: false
+incidentConfiguration:
+  createIncident: true
+  groupingConfiguration:
+    enabled: false
+    reopenClosedIncident: false
+    lookbackDuration: 5h
+    matchingMethod: AllEntities
+    groupByEntities: []
+    groupByAlertDetails: []
+    groupByCustomDetails: []
+eventGroupingSettings:
+  aggregationKind: AlertPerResult
+alertDetailsOverride:
+  alertDisplayNameFormat: Workload Identity Access Token Replay from {{ActivityIPAddress}}
+  alertDescriptionFormat: 'The access token for the workload identity: {{ServicePrincipalName}} was acquired by the public IP address: {{SigninInIPAddress}} and activity performed by the public IP address: {{ActivityIPAddress}}.'
+  alertDynamicProperties: []
+customDetails:
+  ServicePrincipalName: ServicePrincipalName
+  CredentialKeyId: ServicePrincipalCredentialKeyId
+  CredentialThumbprint: ServicePrincipalCredentialThumbprint
+  ObjectId: ServicePrincipalId
+entityMappings:
+- entityType: IP
+  fieldMappings:
+  - identifier: Address
+    columnName: ActivityIPAddress
+- entityType: IP
+  fieldMappings:
+  - identifier: Address
+    columnName: SigninInIPAddress
+suppressionDuration: 5h
+
