@@ -1,0 +1,37 @@
+on:
+  push:
+    branches: [main]
+    paths:
+      - "AnalyticRules/*.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+name: Build YAML Analytic Rules
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build YAML Analytic Rules
+    steps:
+      - uses: actions/checkout@v3
+      - name: Convert rules to YAML
+        run: |
+          Install-Module SentinelARConverter -AcceptLicense -Force
+          Get-ChildItem -Path 'AnalyticRules' -Filter '*.json' | ForEach-Object {
+              Write-Output "Processing file: $($_.Name)"
+              $yamlFilePath = $_.FullName.Replace('.json', '.yaml')
+              if (-not (Test-Path $yamlFilePath) -or (Get-Item $yamlFilePath).LastWriteTime -lt $_.LastWriteTime) {
+                  Write-Host "Converting $($_.FullName) to $yamlFilePath"
+                  Convert-SentinelARArmToYaml -Filename $_.FullName -UseOriginalFilename
+              }
+          }
+        shell: pwsh
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'SentinelARConverter'
+          git config --global user.email 'nicolonsky@users.noreply.github.com'
+          git add AnalyticRules
+          git commit -am "SentinelARConverter"
+          git push
