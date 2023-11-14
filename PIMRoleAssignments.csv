@@ -1,0 +1,8 @@
+"PrincipalId";"PrincipalType";"UserPrincipalName";"RoleDefinitionId";"RoleDefinitionName";"DirectoryScopeId"
+"c31f3141-6a30-45fb-8ea0-9ac4c0f09344";"User";"nicola.suter_basevision.ch#EXT#@nicoladev.onmicrosoft.com";"62e90394-69f5-4237-9190-012177145e10";"Global Administrator";"/"
+"42acb42f-30aa-4e6b-b783-bfcdf4f52db2";"User";"admin@nicoladev.onmicrosoft.com";"8424c6f0-a189-499e-bbd0-26c1753c96d4";"Attribute Definition Administrator";"/"
+"c31f3141-6a30-45fb-8ea0-9ac4c0f09344";"User";"nicola.suter_basevision.ch#EXT#@nicoladev.onmicrosoft.com";"7698a772-787b-4ac8-901f-60d6b08affd2";"Cloud Device Administrator";"/"
+"b0f41ca7-b5cc-462e-99f9-2750f826c839";"User";"nicola_nicolasuter.ch#EXT#@nicoladev.onmicrosoft.com";"3a2c62db-5318-420d-8d74-23affee5d9d5";"Intune Administrator";"/"
+"a8b44c46-72f8-4a1f-bff6-1d6a36d2e041";"User";"AlexW@dev.nicolasuter.ch";"9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3";"Application Administrator";"/"
+"c31f3141-6a30-45fb-8ea0-9ac4c0f09344";"User";"nicola.suter_basevision.ch#EXT#@nicoladev.onmicrosoft.com";"8424c6f0-a189-499e-bbd0-26c1753c96d4";"Attribute Definition Administrator";"/"
+"c31f3141-6a30-45fb-8ea0-9ac4c0f09344";"User";"nicola.suter_basevision.ch#EXT#@nicoladev.onmicrosoft.com";"fe930be7-5e62-47db-91af-98c3a49a38b1";"User Administrator";"/administrativeUnits/6bfd5c94-a5f5-4464-a216-3d6c2c2c7677"
