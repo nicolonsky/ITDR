@@ -1,31 +1,45 @@
+#Requires -Modules Microsoft.Graph.Authentication, Microsoft.Graph.Identity.Governance
 
-# permanently assigned roles
-$roles = Get-MgRoleManagementDirectoryRoleDefinition | Group-Object -Property Id -AsHashTable
+<#
+.SYNOPSIS
+    Get all PIM eligible role assignments for all users and groups in the tenant.
 
-# PIM assigned roles
-$eligibleAssignments = Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance -ExpandProperty 'roleDefinition', 'principal' -All
-$permanentAssignments = Get-MgBetaRoleManagementDirectoryRoleAssignment -All
+.DESCRIPTION
+    Get all PIM eligible role assignments for all users and groups in the tenant and export them to a CSV file.
+#>
 
+Connect-MgGraph -Scopes 'RoleManagement.Read.All' -NoWelcome
 
-$assignments = $eligibleAssignments + $permanentAssignments
+$eligibleRoleAssignments = Get-MgRoleManagementDirectoryRoleEligibilitySchedule -ExpandProperty 'roleDefinition', 'principal'
 
-$roleMapping = @{}
+$roleMembers = $eligibleRoleAssignments | ForEach-Object {
 
-foreach ($role in $roles.GetEnumerator()) {
-    
-
-    foreach ($assignment in $assignments) {
-
-        if ($roleMapping.ContainsKey($assignment.principalId)) {
-            $roleMapping[$assignment.principalId] += [PSCustomObject]@{
-                RoleDefinitionId   = $role.Value.Id
-                RoleDefinitionName = $role.Value.DisplayName
+    if ($PSItem.Principal.AdditionalProperties['@odata.type'] -match 'group') {
+        $roleAssignment = $PSItem
+        Get-MgGroupMember -GroupId $roleAssignment.Principal.Id | ForEach-Object {
+            [PSCustomObject]@{
+                PrincipalId             = $PSItem.Id
+                PrincipalType           = $PSItem.AdditionalProperties['@odata.type']
+                UserPrincipalName       = $PSItem.AdditionalProperties['userPrincipalName']
+                RoleDefinitionId        = $roleAssignment.RoleDefinition.Id
+                RoleDefinitionName      = $roleAssignment.RoleDefinition.DisplayName
+                DirectoryScopeId        = $roleAssignment.DirectoryScopeId
+                AssignmentInheritedFrom = $roleAssignment.Principal.Id
+                AssignmentType          = 'Eligible'
             }
-        } else {
-            $roleMapping[$assignment.principalId] = @([PSCustomObject]@{
-                    RoleDefinitionId   = $role.Value.Id
-                    RoleDefinitionName = $role.Value.DisplayName
-                })
+        }
+    } else {
+        [PSCustomObject]@{
+            PrincipalId             = $PSItem.Principal.Id
+            PrincipalType           = $PSItem.Principal.AdditionalProperties['@odata.type']
+            UserPrincipalName       = $PSItem.Principal.AdditionalProperties['userPrincipalName']
+            RoleDefinitionId        = $PSItem.RoleDefinition.Id
+            RoleDefinitionName      = $PSItem.RoleDefinition.DisplayName
+            DirectoryScopeId        = $PSItem.DirectoryScopeId
+            AssignmentInheritedFrom = $null
+            AssignmentType          = 'Eligible'
         }
     }
 }
+
+$roleMembers | Export-Csv -Path 'eligibleRoleAssignments.csv' -NoTypeInformation -Encoding UTF8 -Delimiter ';'
