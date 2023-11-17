@@ -1,0 +1,93 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspace": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/cd96d5f2-b6ac-46ac-a87e-55954c0c4ea2')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/cd96d5f2-b6ac-46ac-a87e-55954c0c4ea2')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
+            "kind": "Scheduled",
+            "apiVersion": "2022-11-01-preview",
+            "properties": {
+                "displayName": "Privileged Entra Directory Roles unassigned from multiple accounts",
+                "description": "Highly privileged Entra directory roles removed from multiple accounts.",
+                "severity": "Medium",
+                "enabled": true,
+                "query": "let lookback = 2h;\nlet AdminRoleInfo = datatable (RoleId: guid, RoleDisplayName: string)[\n    '62e90394-69f5-4237-9190-012177145e10', 'Global Administrator',\n    'e8611ab8-c189-46e8-94e1-60213ab1f814', 'Privileged Role Administrator'\n];\nAuditLogs\n| where ingestion_time() > ago(lookback)\n| where AADOperationType in~ ('AdminRemovePermanentGrantedRole', 'AdminRemovePermanentEligibleRole')\n| mv-apply details = AdditionalDetails on (\n    where details.key == \"RoleDefinitionOriginId\"\n    | extend RoleId = toguid(details.value)\n    )\n| mv-apply details = AdditionalDetails on (\n    where details.key == \"ipaddr\"\n    | extend IPAddress = tostring(details.value)\n    )\n| lookup AdminRoleInfo on RoleId\n| mv-expand TargetResources\n| where TargetResources.type == 'User'\n| extend\n    UserObjectId = TargetResources.id,\n    UserPrincipalName = TargetResources.userPrincipalName\n| extend Actor = iif(isnotempty(InitiatedBy.user), InitiatedBy.user.id, InitiatedBy.app.appId)\n| project\n    ActivityDateTime,\n    ActivityDisplayName,\n    RoleDisplayName,\n    UserPrincipalName,\n    UserObjectId,\n    Actor,\n    IPAddress\n\n",
+                "queryFrequency": "PT5M",
+                "queryPeriod": "PT2H",
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 2,
+                "suppressionDuration": "PT5H",
+                "suppressionEnabled": false,
+                "startTimeUtc": null,
+                "tactics": [
+                    "Impact"
+                ],
+                "techniques": [
+                    "T1531"
+                ],
+                "alertRuleTemplateName": null,
+                "incidentConfiguration": {
+                    "createIncident": true,
+                    "groupingConfiguration": {
+                        "enabled": true,
+                        "reopenClosedIncident": false,
+                        "lookbackDuration": "PT2H",
+                        "matchingMethod": "Selected",
+                        "groupByEntities": [
+                            "Account"
+                        ],
+                        "groupByAlertDetails": [],
+                        "groupByCustomDetails": [
+                            "RoleDisplayName"
+                        ]
+                    }
+                },
+                "eventGroupingSettings": {
+                    "aggregationKind": "SingleAlert"
+                },
+                "alertDetailsOverride": null,
+                "customDetails": {
+                    "RoleDisplayName": "RoleDisplayName"
+                },
+                "entityMappings": [
+                    {
+                        "entityType": "Account",
+                        "fieldMappings": [
+                            {
+                                "identifier": "AadUserId",
+                                "columnName": "UserObjectId"
+                            }
+                        ]
+                    },
+                    {
+                        "entityType": "Account",
+                        "fieldMappings": [
+                            {
+                                "identifier": "AadUserId",
+                                "columnName": "Actor"
+                            }
+                        ]
+                    },
+                    {
+                        "entityType": "IP",
+                        "fieldMappings": [
+                            {
+                                "identifier": "Address",
+                                "columnName": "IPAddress"
+                            }
+                        ]
+                    }
+                ],
+                "sentinelEntitiesMappings": null,
+                "templateVersion": null
+            }
+        }
+    ]
+}
