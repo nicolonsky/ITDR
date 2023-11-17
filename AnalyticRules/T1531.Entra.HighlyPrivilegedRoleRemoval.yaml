@@ -1,0 +1,79 @@
+id: cd96d5f2-b6ac-46ac-a87e-55954c0c4ea2
+name: Privileged Entra Directory Roles unassigned from multiple accounts
+version: 1.0.0
+kind: Scheduled
+description: Highly privileged Entra directory roles removed from multiple accounts.
+severity: Medium
+queryFrequency: 5m
+queryPeriod: 2h
+triggerOperator: gt
+triggerThreshold: 2
+tactics:
+- Impact
+relevantTechniques:
+- T1531
+query: |+
+  let lookback = 2h;
+  let AdminRoleInfo = datatable (RoleId: guid, RoleDisplayName: string)[
+      '62e90394-69f5-4237-9190-012177145e10', 'Global Administrator',
+      'e8611ab8-c189-46e8-94e1-60213ab1f814', 'Privileged Role Administrator'
+  ];
+  AuditLogs
+  | where ingestion_time() > ago(lookback)
+  | where AADOperationType in~ ('AdminRemovePermanentGrantedRole', 'AdminRemovePermanentEligibleRole')
+  | mv-apply details = AdditionalDetails on (
+      where details.key == "RoleDefinitionOriginId"
+      | extend RoleId = toguid(details.value)
+      )
+  | mv-apply details = AdditionalDetails on (
+      where details.key == "ipaddr"
+      | extend IPAddress = tostring(details.value)
+      )
+  | lookup AdminRoleInfo on RoleId
+  | mv-expand TargetResources
+  | where TargetResources.type == 'User'
+  | extend
+      UserObjectId = TargetResources.id,
+      UserPrincipalName = TargetResources.userPrincipalName
+  | extend Actor = iif(isnotempty(InitiatedBy.user), InitiatedBy.user.id, InitiatedBy.app.appId)
+  | project
+      ActivityDateTime,
+      ActivityDisplayName,
+      RoleDisplayName,
+      UserPrincipalName,
+      UserObjectId,
+      Actor,
+      IPAddress
+
+suppressionEnabled: false
+incidentConfiguration:
+  createIncident: true
+  groupingConfiguration:
+    enabled: true
+    reopenClosedIncident: false
+    lookbackDuration: 2h
+    matchingMethod: Selected
+    groupByEntities:
+    - Account
+    groupByAlertDetails: []
+    groupByCustomDetails:
+    - RoleDisplayName
+eventGroupingSettings:
+  aggregationKind: SingleAlert
+customDetails:
+  RoleDisplayName: RoleDisplayName
+entityMappings:
+- entityType: Account
+  fieldMappings:
+  - identifier: AadUserId
+    columnName: UserObjectId
+- entityType: Account
+  fieldMappings:
+  - identifier: AadUserId
+    columnName: Actor
+- entityType: IP
+  fieldMappings:
+  - identifier: Address
+    columnName: IPAddress
+suppressionDuration: 5h
+
