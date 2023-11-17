@@ -42,4 +42,4 @@ $roleMembers = $eligibleRoleAssignments | ForEach-Object {
     }
 }
 
-$roleMembers | Export-Csv -Path 'eligibleRoleAssignments.csv' -NoTypeInformation -Encoding UTF8 -Delimiter ';'
+$roleMembers | Export-Csv -Path 'eligibleRoleAssignments.csv' -NoTypeInformation -Encoding UTF8 -Delimiter ','
