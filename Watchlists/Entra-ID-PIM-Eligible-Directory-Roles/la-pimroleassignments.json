@@ -1,0 +1,508 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Create_EligibleRoleAssignments_CSV_table": {
+                "inputs": {
+                    "format": "CSV",
+                    "from": "@variables('EligibleRoleAssignments')"
+                },
+                "runAfter": {
+                    "For_each_role_assignment": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Table"
+            },
+            "For_each_role_assignment": {
+                "actions": {
+                    "Principal_Type_equals_group": {
+                        "actions": {
+                            "For_each": {
+                                "actions": {
+                                    "Append_to_EligibleRoleAssignments_(1)": {
+                                        "inputs": {
+                                            "name": "EligibleRoleAssignments",
+                                            "value": "@items('For_each')"
+                                        },
+                                        "runAfter": {},
+                                        "type": "AppendToArrayVariable"
+                                    }
+                                },
+                                "foreach": "@body('Map_members_to_role_assignment')",
+                                "runAfter": {
+                                    "Map_members_to_role_assignment": [
+                                        "Succeeded"
+                                    ]
+                                },
+                                "type": "Foreach"
+                            },
+                            "GET_group_members": {
+                                "inputs": {
+                                    "authentication": {
+                                        "audience": "https://graph.microsoft.com",
+                                        "identity": "/subscriptions/bed24fe9-eca7-4182-90c9-09553f4acb01/resourceGroups/security/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI-SentinelAutomation",
+                                        "type": "ManagedServiceIdentity"
+                                    },
+                                    "method": "GET",
+                                    "uri": "https://graph.microsoft.com/v1.0/groups/@{items('For_each_role_assignment')?['principalId']}/members"
+                                },
+                                "runAfter": {},
+                                "type": "Http"
+                            },
+                            "Map_members_to_role_assignment": {
+                                "inputs": {
+                                    "from": "@body('Parse_group_members')?['value']",
+                                    "select": {
+                                        "AssignmentInheritedFrom": "@items('For_each_role_assignment')?['principalId']",
+                                        "AssignmentType": "Eligible",
+                                        "DirectoryScopeId": "@items('For_each_role_assignment')?['directoryScopeId']",
+                                        "PrincipalId": "@item()?['id']",
+                                        "RoleDefinitionId": "@items('For_each_role_assignment')?['roleDefinitionId']",
+                                        "RoleDefinitionName": "@items('For_each_role_assignment')?['roleDefinition']?['displayName']",
+                                        "UserPrincipalName": "@item()?['userPrincipalName']"
+                                    }
+                                },
+                                "runAfter": {
+                                    "Parse_group_members": [
+                                        "Succeeded"
+                                    ]
+                                },
+                                "type": "Select"
+                            },
+                            "Parse_group_members": {
+                                "inputs": {
+                                    "content": "@body('GET_group_members')",
+                                    "schema": {
+                                        "properties": {
+                                            "@@odata.context": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "items": {
+                                                    "properties": {
+                                                        "@@odata.type": {
+                                                            "type": "string"
+                                                        },
+                                                        "businessPhones": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "displayName": {
+                                                            "type": "string"
+                                                        },
+                                                        "givenName": {
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "type": "string"
+                                                        },
+                                                        "jobTitle": {
+                                                            "type": "string"
+                                                        },
+                                                        "mail": {
+                                                            "type": "string"
+                                                        },
+                                                        "mobilePhone": {},
+                                                        "officeLocation": {
+                                                            "type": "string"
+                                                        },
+                                                        "preferredLanguage": {
+                                                            "type": "string"
+                                                        },
+                                                        "surname": {
+                                                            "type": "string"
+                                                        },
+                                                        "userPrincipalName": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "@@odata.type",
+                                                        "id",
+                                                        "businessPhones",
+                                                        "displayName",
+                                                        "givenName",
+                                                        "jobTitle",
+                                                        "mail",
+                                                        "mobilePhone",
+                                                        "officeLocation",
+                                                        "preferredLanguage",
+                                                        "surname",
+                                                        "userPrincipalName"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "runAfter": {
+                                    "GET_group_members": [
+                                        "Succeeded"
+                                    ]
+                                },
+                                "type": "ParseJson"
+                            }
+                        },
+                        "else": {
+                            "actions": {
+                                "Append_to_EligibleRoleAssignments_(2)": {
+                                    "inputs": {
+                                        "name": "EligibleRoleAssignments",
+                                        "value": "@body('Map_direct_role_assignemt')[0][0]"
+                                    },
+                                    "runAfter": {
+                                        "Map_direct_role_assignemt": [
+                                            "Succeeded"
+                                        ]
+                                    },
+                                    "type": "AppendToArrayVariable"
+                                },
+                                "Map_direct_role_assignemt": {
+                                    "inputs": {
+                                        "from": "@array(items('For_each_role_assignment'))",
+                                        "select": [
+                                            {
+                                                "AssignmentInheritedFrom": null,
+                                                "AssignmentType": "Eligible",
+                                                "DirectoryScopeId": "@item()?['directoryScopeId']",
+                                                "PrincipalId": "@item()?['id']",
+                                                "RoleDefinitionId": "@item()?['roleDefinitionId']",
+                                                "RoleDefinitionName": "@item()?['roleDefinition']?['displayName']",
+                                                "UserPrincipalName": "@item()['principal']['userPrincipalName']"
+                                            }
+                                        ]
+                                    },
+                                    "runAfter": {},
+                                    "type": "Select"
+                                }
+                            }
+                        },
+                        "expression": {
+                            "and": [
+                                {
+                                    "equals": [
+                                        "@items('For_each_role_assignment')?['principal']?['@odata.type']",
+                                        "#microsoft.graph.group"
+                                    ]
+                                }
+                            ]
+                        },
+                        "runAfter": {},
+                        "type": "If"
+                    }
+                },
+                "foreach": "@body('Parse_Eligible_Role_Assignments')?['value']",
+                "runAfter": {
+                    "Parse_Eligible_Role_Assignments": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Foreach"
+            },
+            "Initialize_EligibleRoleAssignments[]": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "EligibleRoleAssignments",
+                            "type": "array"
+                        }
+                    ]
+                },
+                "runAfter": {},
+                "type": "InitializeVariable"
+            },
+            "Initialize_ResourceGroupName": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "ResourceGroupName",
+                            "type": "string",
+                            "value": "<ResourceGroupName>"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_SubscriptionId": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_SubscriptionId": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "SubscriptionId",
+                            "type": "string",
+                            "value": "<SubscriptionId>"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_EligibleRoleAssignments[]": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_WatchlistAlias": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "WatchlistAlias",
+                            "type": "string",
+                            "value": "PIMEligibleAssignments"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_WorkspaceName": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_WorkspaceName": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "WorkspaceName",
+                            "type": "string",
+                            "value": "<WorkspaceName>"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_ResourceGroupName": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "PUT_Sentinel_Watchlist": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://management.azure.com",
+                        "identity": "/subscriptions/<SubscriptionId>/resourceGroups/security/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI-SentinelAutomation",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "properties": {
+                            "contentType": "text/csv",
+                            "description": "Watchlist for eligible Entra ID directory role assignments. This watchlist is maintained by a logic app.",
+                            "displayName": "Entra ID eligible directory role assignments",
+                            "itemsSearchKey": "PrincipalId",
+                            "numberOfLinesToSkip": 0,
+                            "provider": "Microsoft",
+                            "rawContent": "@{body('Create_EligibleRoleAssignments_CSV_table')}",
+                            "source": "Local file"
+                        }
+                    },
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "method": "PUT",
+                    "uri": "https://management.azure.com/subscriptions/@{variables('SubscriptionId')}/resourceGroups/@{variables('ResourceGroupName')}/providers/Microsoft.OperationalInsights/workspaces/@{variables('WorkspaceName')}/providers/Microsoft.SecurityInsights/watchlists/@{variables('WatchlistAlias')}?api-version=2023-02-01"
+                },
+                "runAfter": {
+                    "Create_EligibleRoleAssignments_CSV_table": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Parse_Eligible_Role_Assignments": {
+                "inputs": {
+                    "content": "@triggerBody()",
+                    "schema": {
+                        "properties": {
+                            "@@microsoft.graph.tips": {
+                                "type": "string"
+                            },
+                            "@@odata.context": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "items": {
+                                    "properties": {
+                                        "appScopeId": {},
+                                        "createdDateTime": {
+                                            "type": "string"
+                                        },
+                                        "createdUsing": {
+                                            "type": "string"
+                                        },
+                                        "directoryScopeId": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "memberType": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ]
+                                        },
+                                        "modifiedDateTime": {
+                                            "type": "string"
+                                        },
+                                        "principal": {
+                                            "properties": {
+                                                "@@odata.type": {
+                                                    "type": "string"
+                                                },
+                                                "businessPhones": {
+                                                    "type": "array"
+                                                },
+                                                "displayName": {
+                                                    "type": "string"
+                                                },
+                                                "givenName": {},
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "jobTitle": {},
+                                                "mail": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "mobilePhone": {},
+                                                "officeLocation": {},
+                                                "preferredLanguage": {},
+                                                "surname": {},
+                                                "userPrincipalName": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "principalId": {
+                                            "type": "string"
+                                        },
+                                        "roleDefinition": {
+                                            "properties": {
+                                                "description": {
+                                                    "type": "string"
+                                                },
+                                                "displayName": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "isBuiltIn": {
+                                                    "type": "boolean"
+                                                },
+                                                "isEnabled": {
+                                                    "type": "boolean"
+                                                },
+                                                "resourceScopes": {
+                                                    "type": "array"
+                                                },
+                                                "rolePermissions": {
+                                                    "type": "array"
+                                                },
+                                                "templateId": {
+                                                    "type": "string"
+                                                },
+                                                "version": {}
+                                            },
+                                            "type": "object"
+                                        },
+                                        "roleDefinitionId": {
+                                            "type": "string"
+                                        },
+                                        "scheduleInfo": {
+                                            "properties": {
+                                                "expiration": {
+                                                    "properties": {
+                                                        "duration": {},
+                                                        "endDateTime": {},
+                                                        "type": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "recurrence": {},
+                                                "startDateTime": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "principalId",
+                                        "roleDefinitionId",
+                                        "directoryScopeId",
+                                        "appScopeId",
+                                        "createdUsing",
+                                        "createdDateTime",
+                                        "modifiedDateTime",
+                                        "status",
+                                        "memberType",
+                                        "scheduleInfo",
+                                        "roleDefinition",
+                                        "principal"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "runAfter": {
+                    "Initialize_WatchlistAlias": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ParseJson"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {},
+        "triggers": {
+            "Get_PIM_Eligible_Role_Assignments": {
+                "evaluatedRecurrence": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "identity": "/subscriptions/<SubscriptionId>/resourceGroups/security/providers/Microsoft.ManagedIdentity/userAssignedIdentities/UAMI-SentinelAutomation",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "method": "GET",
+                    "uri": "https://graph.microsoft.com/v1.0/roleManagement/directory/roleEligibilitySchedules?$expand=roleDefinition,principal"
+                },
+                "recurrence": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "type": "Http"
+            }
+        }
+    },
+    "parameters": {}
+}
