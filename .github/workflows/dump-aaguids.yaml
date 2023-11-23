@@ -1,0 +1,37 @@
+on:
+  schedule:
+    - cron: '0 8 */1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+name: Dump AAGuids
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Dump latest AAGUIDs
+    steps:
+      - uses: actions/checkout@v3
+      - name: Dump AAGUIDs
+        run: |
+          $uri = 'https://github.com/passkeydeveloper/passkey-authenticator-aaguids/raw/main/combined_aaguid.json'
+          $targetPath = 'Watchlists/aaguids.json'
+          $data = Invoke-RestMethod -Uri $uri
+          $aaGuidInfo = @{}
+          $data.psobject.properties.name | ForEach-Object { $aaGuidInfo[$PSItem] = $data.$PSItem }
+          $aaGuidInfo.GetEnumerator() | ForEach-Object {
+              [PSCustomObject]@{
+                  AAGuid = $_.Key
+                  Name = $_.Value.Name
+              }
+          } | ConvertTo-Json | Set-Content $targetPath -Encoding utf8 -Force    
+        shell: pwsh
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'AAGuid dump'
+          git config --global user.email 'nicolonsky@users.noreply.github.com'
+          git add .
+          git commit -am "AAGuid dump"
+          git push
