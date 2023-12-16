@@ -1,127 +1,115 @@
 [
   {
-    "AAGuid": "58b44d0b-0a7c-f33a-fd48-f7153c871352",
-    "Name": "Ledger Nano S Plus FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "504d7149-4e4c-3841-4555-55445a677357",
-    "Name": "WiSECURE AuthTron USB FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "fcb1bcb4-f370-078c-6993-bc24d0ae3fbe",
-    "Name": "Ledger Nano X FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "361a3082-0278-4583-a16f-72a527f973e4",
-    "Name": "eWBM eFA500 FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "89b19028-256b-4025-8872-255358d950e4",
-    "Name": "Sentry Enterprises CTAP2 Authenticator"
-  },
-  {
-    "AAGuid": "2c0df832-92de-4be1-8412-88a8f074df4a",
-    "Name": "Feitian FIDO Smart Card"
-  },
-  {
-    "AAGuid": "61250591-b2bc-4456-b719-0b17be90bb30",
-    "Name": "eWBM eFPA FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "f7c558a0-f465-11e8-b568-0800200c9a66",
-    "Name": "KONAI Secp256R1 FIDO2 Conformance Testing CTAP2 Authenticator"
-  },
-  {
-    "AAGuid": "73402251-f2a8-4f03-873e-3cb6db604b03",
-    "Name": "uTrust FIDO2 Security Key"
-  },
-  {
-    "AAGuid": "4c50ff10-1057-4fc6-b8ed-43a529530c3c",
-    "Name": "ImproveID Authenticator"
-  },
-  {
-    "AAGuid": "54d9fee8-e621-4291-8b18-7157b99c5bec",
-    "Name": "HID Crescendo Enabled"
-  },
-  {
-    "AAGuid": "c1f9a0bc-1dd2-404a-b27f-8e29047a43fd",
-    "Name": "YubiKey 5 FIPS Series with NFC"
-  },
-  {
-    "AAGuid": "0acf3011-bc60-f375-fb53-6f05f43154e0",
-    "Name": "Nymi FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "516d3969-5a57-5651-5958-4e7a49434167",
-    "Name": "SmartDisplayer BobeePass FIDO2 Authenticator"
+    "AAGuid": "eb3b131e-59dc-536a-d176-cb7306da10f5",
+    "Name": "ellipticSecure MIRkey USB Authenticator"
   },
   {
     "AAGuid": "12ded745-4bed-47d4-abaa-e713f51d6393",
     "Name": "Feitian AllinOne FIDO2 Authenticator"
   },
   {
-    "AAGuid": "c5703116-972b-4851-a3e7-ae1259843399",
-    "Name": "NEOWAVE Badgeo FIDO2"
+    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
+    "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
-    "AAGuid": "9f77e279-a6e2-4d58-b700-31e5943c6a98",
-    "Name": "Hyper FIDO Pro"
+    "AAGuid": "d41f5a69-b817-4144-a13c-9ebd6d9254d6",
+    "Name": "ATKey.Card CTAP2.0"
   },
   {
-    "AAGuid": "833b721a-ff5f-4d00-bb2e-bdda3ec01e29",
-    "Name": "Feitian ePass FIDO2 Authenticator"
+    "AAGuid": "f7c558a0-f465-11e8-b568-0800200c9a66",
+    "Name": "KONAI Secp256R1 FIDO2 Conformance Testing CTAP2 Authenticator"
   },
   {
-    "AAGuid": "5ca1ab1e-1337-fa57-f1d0-a117e71ca702",
-    "Name": "Allthenticator App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers"
+    "AAGuid": "b6ede29c-3772-412c-8a78-539c1f4c62d2",
+    "Name": "Feitian BioPass FIDO2 Plus Authenticator"
   },
   {
-    "AAGuid": "adce0002-35bc-c60a-648b-0b25f1f05503",
-    "Name": "Chrome on Mac"
+    "AAGuid": "e416201b-afeb-41ca-a03d-2281c28322aa",
+    "Name": "ATKey.Pro CTAP2.1"
   },
   {
-    "AAGuid": "f8a011f3-8c0a-4d15-8006-17111f9edc7d",
-    "Name": "Security Key by Yubico"
+    "AAGuid": "cdbdaea2-c415-5073-50f7-c04e968640b6",
+    "Name": "Excelsecu eSecu FIDO2 Security Key"
   },
   {
-    "AAGuid": "3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d",
-    "Name": "Feitian iePass FIDO Authenticator"
+    "AAGuid": "bada5566-a7aa-401f-bd96-45619a55120d",
+    "Name": "1Password"
   },
   {
-    "AAGuid": "be727034-574a-f799-5c76-0929e0430973",
-    "Name": "Crayonic KeyVault K1 (USB-NFC-BLE FIDO2 Authenticator)"
+    "AAGuid": "50a45b0c-80e7-f944-bf29-f552bfa2e048",
+    "Name": "ACS FIDO Authenticator"
   },
   {
-    "AAGuid": "5343502d-5343-5343-6172-644649444f32",
-    "Name": "ESS Smart Card Inc. Authenticator"
+    "AAGuid": "931327dd-c89b-406c-a81e-ed7058ef36c6",
+    "Name": "Swissbit iShield FIDO2"
   },
   {
-    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
-    "Name": "Pone Biometrics OFFPAD Authenticator"
+    "AAGuid": "85203421-48f9-4355-9bc8-8a53846e5083",
+    "Name": "YubiKey 5 FIPS Series with Lightning"
   },
   {
-    "AAGuid": "8d1b1fcb-3c76-49a9-9129-5515b346aa02",
-    "Name": "IDEMIA ID-ONE Card"
+    "AAGuid": "2c0df832-92de-4be1-8412-88a8f074df4a",
+    "Name": "Feitian FIDO Smart Card"
+  },
+  {
+    "AAGuid": "34f5766d-1536-4a24-9033-0e294e510fb0",
+    "Name": "YubiKey 5 Series CTAP2.1 Preview Expired "
+  },
+  {
+    "AAGuid": "bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a",
+    "Name": "Excelsecu eSecu FIDO2 PRO Security Key"
+  },
+  {
+    "AAGuid": "9c835346-796b-4c27-8898-d6032f515cc5",
+    "Name": "Cryptnox FIDO2"
+  },
+  {
+    "AAGuid": "87dbc5a1-4c94-4dc8-8a47-97d800fd1f3c",
+    "Name": "eWBM eFA320 FIDO2 Authenticator"
   },
   {
     "AAGuid": "d7a423ad-3e19-4492-9200-78137dccc136",
     "Name": "VivoKey Apex FIDO2"
   },
   {
-    "AAGuid": "2d3bec26-15ee-4f5d-88b2-53622490270b",
-    "Name": "HID Crescendo Key V2"
+    "AAGuid": "adce0002-35bc-c60a-648b-0b25f1f05503",
+    "Name": "Chrome on Mac"
   },
   {
-    "AAGuid": "6002f033-3c07-ce3e-d0f7-0ffe5ed42543",
-    "Name": "Excelsecu eSecu FIDO2 Fingerprint Key"
+    "AAGuid": "58b44d0b-0a7c-f33a-fd48-f7153c871352",
+    "Name": "Ledger Nano S Plus FIDO2 Authenticator"
   },
   {
-    "AAGuid": "95442b2e-f15e-4def-b270-efb106facb4e",
-    "Name": "eWBM eFA310 FIDO2 Authenticator"
+    "AAGuid": "da1fa263-8b25-42b6-a820-c0036f21ba7f",
+    "Name": "ATKey.Card NFC"
   },
   {
-    "AAGuid": "6028b017-b1d4-4c02-b4b3-afcdafc96bb2",
-    "Name": "Windows Hello Software Authenticator"
+    "AAGuid": "88bbd2f0-342a-42e7-9729-dd158be5407a",
+    "Name": "Precision InnaIT Key FIDO 2 Level 2 certified"
+  },
+  {
+    "AAGuid": "9876631b-d4a0-427f-5773-0ec71c9e0279",
+    "Name": "Somu Secp256R1 FIDO2 CTAP2 Authenticator"
+  },
+  {
+    "AAGuid": "efb96b10-a9ee-4b6c-a4a9-d32125ccd4a4",
+    "Name": "Safenet eToken FIDO"
+  },
+  {
+    "AAGuid": "8876631b-d4a0-427f-5773-0ec71c9e0279",
+    "Name": "Solo Secp256R1 FIDO2 CTAP2 Authenticator"
+  },
+  {
+    "AAGuid": "0acf3011-bc60-f375-fb53-6f05f43154e0",
+    "Name": "Nymi FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "30b5035e-d297-4fc1-b00b-addc96ba6a97",
+    "Name": "OneSpan FIDO Touch"
+  },
+  {
+    "AAGuid": "771b48fd-d3d4-4f74-9232-fc157ab0507a",
+    "Name": "Edge on Mac"
   },
   {
     "AAGuid": "ee882879-721c-4913-9775-3dfcce97072a",
@@ -132,152 +120,88 @@
     "Name": "Feitian BioPass FIDO2 Pro Authenticator"
   },
   {
-    "AAGuid": "b5397666-4885-aa6b-cebf-e52262a439a2",
-    "Name": "Chromium Browser"
+    "AAGuid": "cfcb13a2-244f-4b36-9077-82b79d6a7de7",
+    "Name": "USB/NFC Passcode Authenticator"
   },
   {
-    "AAGuid": "664d9f67-84a2-412a-9ff7-b4f7d8ee6d05",
-    "Name": "OpenSK authenticator"
+    "AAGuid": "d821a7d4-e97c-4cb6-bd82-4237731fd4be",
+    "Name": "Hyper FIDO Bio Security Key"
   },
   {
-    "AAGuid": "85203421-48f9-4355-9bc8-8a53846e5083",
-    "Name": "YubiKey 5 FIPS Series with Lightning"
+    "AAGuid": "0076631b-d4a0-427f-5773-0ec71c9e0279",
+    "Name": "HYPR FIDO2 Authenticator"
   },
   {
-    "AAGuid": "973446ca-e21c-9a9b-99f5-9b985a67af0f",
-    "Name": "ACS FIDO Authenticator Card"
+    "AAGuid": "89b19028-256b-4025-8872-255358d950e4",
+    "Name": "Sentry Enterprises CTAP2 Authenticator"
   },
   {
-    "AAGuid": "d91c5288-0ef0-49b7-b8ae-21ca0aa6b3f3",
-    "Name": "KEY-ID FIDO2 Authenticator"
+    "AAGuid": "0ea242b4-43c4-4a1b-8b17-dd6d0b6baec6",
+    "Name": "Keeper"
   },
   {
-    "AAGuid": "bc2fe499-0d8e-4ffe-96f3-94a82840cf8c",
-    "Name": "OCTATCO EzQuant FIDO2 AUTHENTICATOR"
-  },
-  {
-    "AAGuid": "d8522d9f-575b-4866-88a9-ba99fa02f35b",
-    "Name": "YubiKey Bio Series"
-  },
-  {
-    "AAGuid": "cb69481e-8ff7-4039-93ec-0a2729a154a8",
-    "Name": "YubiKey 5 Series"
-  },
-  {
-    "AAGuid": "9c835346-796b-4c27-8898-d6032f515cc5",
-    "Name": "Cryptnox FIDO2"
-  },
-  {
-    "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
-    "Name": "Security Key by Yubico with NFC"
-  },
-  {
-    "AAGuid": "50a45b0c-80e7-f944-bf29-f552bfa2e048",
-    "Name": "ACS FIDO Authenticator"
-  },
-  {
-    "AAGuid": "95e4d58c-056e-4a65-866d-f5a69659e880",
-    "Name": "TruU Windows Authenticator"
-  },
-  {
-    "AAGuid": "fec067a1-f1d0-4c5e-b4c0-cc3237475461",
-    "Name": "KX701 SmartToken FIDO"
-  },
-  {
-    "AAGuid": "a1f52be5-dfab-4364-b51c-2bd496b14a56",
-    "Name": "OCTATCO EzFinger2 FIDO2 AUTHENTICATOR"
-  },
-  {
-    "AAGuid": "771b48fd-d3d4-4f74-9232-fc157ab0507a",
-    "Name": "Edge on Mac"
-  },
-  {
-    "AAGuid": "8c97a730-3f7b-41a6-87d6-1e9b62bda6f0",
-    "Name": "FT-JCOS FIDO Fingerprint Card"
-  },
-  {
-    "AAGuid": "77010bd7-212a-4fc9-b236-d2ca5e9d4084",
-    "Name": "Feitian BioPass FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "b50d5e0a-7f81-4959-9b12-f45407407503",
-    "Name": "IDPrime 3940 FIDO"
-  },
-  {
-    "AAGuid": "34f5766d-1536-4a24-9033-0e294e510fb0",
-    "Name": "YubiKey 5 Series CTAP2.1 Preview Expired "
-  },
-  {
-    "AAGuid": "20f0be98-9af9-986a-4b42-8eca4acb28e4",
+    "AAGuid": "d384db22-4d50-ebde-2eac-5765cf1e2a44",
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
-    "AAGuid": "c5ef55ff-ad9a-4b9f-b580-adebafe026d0",
-    "Name": "YubiKey 5 Series with Lightning"
+    "AAGuid": "531126d6-e717-415c-9320-3d9aa6981239",
+    "Name": "Dashlane"
   },
   {
-    "AAGuid": "e416201b-afeb-41ca-a03d-2281c28322aa",
-    "Name": "ATKey.Pro CTAP2.1"
-  },
-  {
-    "AAGuid": "3b1adb99-0dfe-46fd-90b8-7f7614a4de2a",
-    "Name": "GoTrust Idem Key FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "d94a29d9-52dd-4247-9c2d-8b818b610389",
-    "Name": "VeriMark Guard Fingerprint Key"
-  },
-  {
-    "AAGuid": "0d9b2e56-566b-c393-2940-f821b7f15d6d",
-    "Name": "Excelsecu eSecu FIDO2 Pro Security Key"
-  },
-  {
-    "AAGuid": "ec31b4cc-2acc-4b8e-9c01-bade00ccbe26",
-    "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
-  },
-  {
-    "AAGuid": "b6ede29c-3772-412c-8a78-539c1f4c62d2",
-    "Name": "Feitian BioPass FIDO2 Plus Authenticator"
+    "AAGuid": "08987058-cadc-4b81-b6e1-30de50dcbe96",
+    "Name": "Windows Hello Hardware Authenticator"
   },
   {
     "AAGuid": "3789da91-f943-46bc-95c3-50ea2012f03a",
     "Name": "NEOWAVE Winkeo FIDO2"
   },
   {
-    "AAGuid": "692db549-7ae5-44d5-a1e5-dd20a493b723",
-    "Name": "HID Crescendo Key"
+    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
+    "Name": "Security Key by Yubico with NFC"
   },
   {
-    "AAGuid": "8876631b-d4a0-427f-5773-0ec71c9e0279",
-    "Name": "Solo Secp256R1 FIDO2 CTAP2 Authenticator"
+    "AAGuid": "be727034-574a-f799-5c76-0929e0430973",
+    "Name": "Crayonic KeyVault K1 (USB-NFC-BLE FIDO2 Authenticator)"
   },
   {
-    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
-    "Name": "YubiKey 5 Series with NFC"
+    "AAGuid": "b93fd961-f2e6-462f-b122-82002247de78",
+    "Name": "Android Authenticator with SafetyNet Attestation"
   },
   {
-    "AAGuid": "cfcb13a2-244f-4b36-9077-82b79d6a7de7",
-    "Name": "USB/NFC Passcode Authenticator"
+    "AAGuid": "2d3bec26-15ee-4f5d-88b2-53622490270b",
+    "Name": "HID Crescendo Key V2"
   },
   {
-    "AAGuid": "aeb6569c-f8fb-4950-ac60-24ca2bbe2e52",
-    "Name": "HID Crescendo C2300"
+    "AAGuid": "454e5346-4944-4ffd-6c93-8e9267193e9a",
+    "Name": "Ensurity ThinC"
   },
   {
-    "AAGuid": "bada5566-a7aa-401f-bd96-45619a55120d",
-    "Name": "1Password"
+    "AAGuid": "9f0d8150-baa5-4c00-9299-ad62c8bb4e87",
+    "Name": "GoTrust Idem Card FIDO2 Authenticator"
   },
   {
-    "AAGuid": "efb96b10-a9ee-4b6c-a4a9-d32125ccd4a4",
-    "Name": "Safenet eToken FIDO"
+    "AAGuid": "fcb1bcb4-f370-078c-6993-bc24d0ae3fbe",
+    "Name": "Ledger Nano X FIDO2 Authenticator"
   },
   {
-    "AAGuid": "b92c3f9a-c014-4056-887f-140a2501163b",
-    "Name": "Security Key by Yubico"
+    "AAGuid": "ba76a271-6eb6-4171-874d-b6428dbe3437",
+    "Name": "ATKey.ProS"
   },
   {
-    "AAGuid": "30b5035e-d297-4fc1-b00b-addc96ba6a97",
-    "Name": "OneSpan FIDO Touch"
+    "AAGuid": "73bb0cd4-e502-49b8-9c6f-b59445bf720b",
+    "Name": "YubiKey 5 FIPS Series"
+  },
+  {
+    "AAGuid": "95e4d58c-056e-4a65-866d-f5a69659e880",
+    "Name": "TruU Windows Authenticator"
+  },
+  {
+    "AAGuid": "d91c5288-0ef0-49b7-b8ae-21ca0aa6b3f3",
+    "Name": "KEY-ID FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "e1a96183-5016-4f24-b55b-e3ae23614cc6",
+    "Name": "ATKey.Pro CTAP2.0"
   },
   {
     "AAGuid": "39a5647e-1853-446c-a1f6-a79bae9f5bc7",
@@ -288,99 +212,139 @@
     "Name": "Egomet FIDO2 Authenticator for Android"
   },
   {
-    "AAGuid": "b267239b-954f-4041-a01b-ee4f33c145b6",
-    "Name": "authenton1 - CTAP2.1"
+    "AAGuid": "61250591-b2bc-4456-b719-0b17be90bb30",
+    "Name": "eWBM eFPA FIDO2 Authenticator"
   },
   {
-    "AAGuid": "9f0d8150-baa5-4c00-9299-ad62c8bb4e87",
-    "Name": "GoTrust Idem Card FIDO2 Authenticator"
+    "AAGuid": "7e3f3d30-3557-4442-bdae-139312178b39",
+    "Name": "RSA DS100"
   },
   {
-    "AAGuid": "4e768f2c-5fab-48b3-b300-220eb487752b",
-    "Name": "Hideez Key 4 FIDO2 SDK"
+    "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
+    "Name": "Security Key by Yubico with NFC"
   },
   {
-    "AAGuid": "f4c63eff-d26c-4248-801c-3736c7eaa93a",
-    "Name": "FIDO KeyPass S3"
+    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
+    "Name": "Pone Biometrics OFFPAD Authenticator"
   },
   {
-    "AAGuid": "0076631b-d4a0-427f-5773-0ec71c9e0279",
-    "Name": "HYPR FIDO2 Authenticator"
+    "AAGuid": "5343502d-5343-5343-6172-644649444f32",
+    "Name": "ESS Smart Card Inc. Authenticator"
   },
   {
-    "AAGuid": "4b3f8944-d4f2-4d21-bb19-764a986ec160",
-    "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
+    "AAGuid": "8d1b1fcb-3c76-49a9-9129-5515b346aa02",
+    "Name": "IDEMIA ID-ONE Card"
   },
   {
-    "AAGuid": "ab32f0c6-2239-afbb-c470-d2ef4e254db7",
-    "Name": "TOKEN2 FIDO2 Security Key"
+    "AAGuid": "42b4fb4a-2866-43b2-9bf7-6c6669c2e5d3",
+    "Name": "Google Titan Security Key v2"
   },
   {
-    "AAGuid": "820d89ed-d65a-409e-85cb-f73f0578f82a",
-    "Name": "IDmelon iOS Authenticator"
+    "AAGuid": "3b1adb99-0dfe-46fd-90b8-7f7614a4de2a",
+    "Name": "GoTrust Idem Key FIDO2 Authenticator"
   },
   {
-    "AAGuid": "08987058-cadc-4b81-b6e1-30de50dcbe96",
-    "Name": "Windows Hello Hardware Authenticator"
+    "AAGuid": "3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d",
+    "Name": "Feitian iePass FIDO Authenticator"
   },
   {
-    "AAGuid": "ba76a271-6eb6-4171-874d-b6428dbe3437",
-    "Name": "ATKey.ProS"
+    "AAGuid": "833b721a-ff5f-4d00-bb2e-bdda3ec01e29",
+    "Name": "Feitian ePass FIDO2 Authenticator"
   },
   {
-    "AAGuid": "88bbd2f0-342a-42e7-9729-dd158be5407a",
-    "Name": "Precision InnaIT Key FIDO 2 Level 2 certified"
+    "AAGuid": "692db549-7ae5-44d5-a1e5-dd20a493b723",
+    "Name": "HID Crescendo Key"
   },
   {
-    "AAGuid": "9ddd1817-af5a-4672-a2b9-3e3dd95000a9",
-    "Name": "Windows Hello VBS Hardware Authenticator"
+    "AAGuid": "5fdb81b8-53f0-4967-a881-f5ec26fe4d18",
+    "Name": "VinCSS FIDO2 Authenticator"
   },
   {
-    "AAGuid": "d821a7d4-e97c-4cb6-bd82-4237731fd4be",
-    "Name": "Hyper FIDO Bio Security Key"
-  },
-  {
-    "AAGuid": "d548826e-79b4-db40-a3d8-11116f7e8349",
-    "Name": "Bitwarden"
-  },
-  {
-    "AAGuid": "bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a",
-    "Name": "Excelsecu eSecu FIDO2 PRO Security Key"
-  },
-  {
-    "AAGuid": "ab32f0c6-2239-afbb-c470-d2ef4e254db6",
-    "Name": "TEST (DUMMY RECORD)"
-  },
-  {
-    "AAGuid": "ea9b8d66-4d01-1d21-3ce4-b6b48cb575d4",
-    "Name": "Google Password Manager"
-  },
-  {
-    "AAGuid": "d41f5a69-b817-4144-a13c-9ebd6d9254d6",
-    "Name": "ATKey.Card CTAP2.0"
+    "AAGuid": "3e078ffd-4c54-4586-8baa-a77da113aec5",
+    "Name": "Hideez Key 3 FIDO2"
   },
   {
     "AAGuid": "8976631b-d4a0-427f-5773-0ec71c9e0279",
     "Name": "Solo Tap Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
-    "AAGuid": "da1fa263-8b25-42b6-a820-c0036f21ba7f",
-    "Name": "ATKey.Card NFC"
+    "AAGuid": "516d3969-5a57-5651-5958-4e7a49434167",
+    "Name": "SmartDisplayer BobeePass FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "fbefdf68-fe86-0106-213e-4d5fa24cbe2e",
+    "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
+  },
+  {
+    "AAGuid": "998f358b-2dd2-4cbe-a43a-e8107438dfb3",
+    "Name": "OnlyKey Secp256R1 FIDO2 CTAP2 Authenticator"
+  },
+  {
+    "AAGuid": "4c50ff10-1057-4fc6-b8ed-43a529530c3c",
+    "Name": "ImproveID Authenticator"
+  },
+  {
+    "AAGuid": "973446ca-e21c-9a9b-99f5-9b985a67af0f",
+    "Name": "ACS FIDO Authenticator Card"
+  },
+  {
+    "AAGuid": "0d9b2e56-566b-c393-2940-f821b7f15d6d",
+    "Name": "Excelsecu eSecu FIDO2 Pro Security Key"
+  },
+  {
+    "AAGuid": "c80dbd9a-533f-4a17-b941-1a2f1c7cedff",
+    "Name": "HID Crescendo C3000"
+  },
+  {
+    "AAGuid": "cb69481e-8ff7-4039-93ec-0a2729a154a8",
+    "Name": "YubiKey 5 Series"
+  },
+  {
+    "AAGuid": "f3809540-7f14-49c1-a8b3-8f813b225541",
+    "Name": "Enpass"
+  },
+  {
+    "AAGuid": "83c47309-aabb-4108-8470-8be838b573cb",
+    "Name": "YubiKey Bio Series (Enterprise Profile)"
+  },
+  {
+    "AAGuid": "54d9fee8-e621-4291-8b18-7157b99c5bec",
+    "Name": "HID Crescendo Enabled"
+  },
+  {
+    "AAGuid": "b50d5e0a-7f81-4959-9b12-f45407407503",
+    "Name": "IDPrime 3940 FIDO"
+  },
+  {
+    "AAGuid": "a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa",
+    "Name": "Security Key NFC by Yubico"
+  },
+  {
+    "AAGuid": "a1f52be5-dfab-4364-b51c-2bd496b14a56",
+    "Name": "OCTATCO EzFinger2 FIDO2 AUTHENTICATOR"
+  },
+  {
+    "AAGuid": "4e768f2c-5fab-48b3-b300-220eb487752b",
+    "Name": "Hideez Key 4 FIDO2 SDK"
+  },
+  {
+    "AAGuid": "ab32f0c6-2239-afbb-c470-d2ef4e254db7",
+    "Name": "TOKEN2 FIDO2 Security Key"
+  },
+  {
+    "AAGuid": "ca87cb70-4c1b-4579-a8e8-4efdd7c007e0",
+    "Name": "FIDO Alliance TruU Sample FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "d94a29d9-52dd-4247-9c2d-8b818b610389",
+    "Name": "VeriMark Guard Fingerprint Key"
   },
   {
     "AAGuid": "ba86dc56-635f-4141-aef6-00227b1b9af6",
     "Name": "TruU Windows Authenticator"
   },
   {
-    "AAGuid": "d61d3b87-3e7c-4aea-9c50-441c371903ad",
-    "Name": "KeyVault Secp256R1 FIDO2 CTAP2 Authenticator"
-  },
-  {
-    "AAGuid": "e1a96183-5016-4f24-b55b-e3ae23614cc6",
-    "Name": "ATKey.Pro CTAP2.0"
-  },
-  {
-    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
+    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
@@ -388,143 +352,179 @@
     "Name": "Apple iCloud Keychain (Managed)"
   },
   {
-    "AAGuid": "175cd298-83d2-4a26-b637-313c07a6434e",
-    "Name": "Chunghwa Telecom FIDO2 Smart Card Authenticator"
-  },
-  {
-    "AAGuid": "eb3b131e-59dc-536a-d176-cb7306da10f5",
-    "Name": "ellipticSecure MIRkey USB Authenticator"
-  },
-  {
-    "AAGuid": "cdbdaea2-c415-5073-50f7-c04e968640b6",
-    "Name": "Excelsecu eSecu FIDO2 Security Key"
+    "AAGuid": "ec31b4cc-2acc-4b8e-9c01-bade00ccbe26",
+    "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
     "AAGuid": "eabb46cc-e241-80bf-ae9e-96fa6d2975cf",
     "Name": "TOKEN2 PIN Plus Security Key Series "
   },
   {
-    "AAGuid": "b93fd961-f2e6-462f-b122-82002247de78",
-    "Name": "Android Authenticator with SafetyNet Attestation"
+    "AAGuid": "95442b2e-f15e-4def-b270-efb106facb4e",
+    "Name": "eWBM eFA310 FIDO2 Authenticator"
   },
   {
-    "AAGuid": "3e078ffd-4c54-4586-8baa-a77da113aec5",
-    "Name": "Hideez Key 3 FIDO2"
-  },
-  {
-    "AAGuid": "fbefdf68-fe86-0106-213e-4d5fa24cbe2e",
-    "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
-  },
-  {
-    "AAGuid": "531126d6-e717-415c-9320-3d9aa6981239",
-    "Name": "Dashlane"
+    "AAGuid": "20f0be98-9af9-986a-4b42-8eca4acb28e4",
+    "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
     "AAGuid": "9d3df6ba-282f-11ed-a261-0242ac120002",
     "Name": "Arculus FIDO2/U2F Key Card"
   },
   {
-    "AAGuid": "07a9f89c-6407-4594-9d56-621d5f1e358b",
-    "Name": "NXP Semiconductros FIDO2 Conformance Testing CTAP2 Authenticator"
-  },
-  {
-    "AAGuid": "454e5346-4944-4ffd-6c93-8e9267193e9a",
-    "Name": "Ensurity ThinC"
-  },
-  {
-    "AAGuid": "c80dbd9a-533f-4a17-b941-1a2f1c7cedff",
-    "Name": "HID Crescendo C3000"
-  },
-  {
-    "AAGuid": "f3809540-7f14-49c1-a8b3-8f813b225541",
-    "Name": "Enpass"
-  },
-  {
-    "AAGuid": "ee041bce-25e5-4cdb-8f86-897fd6418464",
-    "Name": "Feitian ePass FIDO2-NFC Authenticator"
-  },
-  {
-    "AAGuid": "d384db22-4d50-ebde-2eac-5765cf1e2a44",
-    "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
-  },
-  {
-    "AAGuid": "87dbc5a1-4c94-4dc8-8a47-97d800fd1f3c",
-    "Name": "eWBM eFA320 FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "3f59672f-20aa-4afe-b6f4-7e5e916b6d98",
-    "Name": "Arculus FIDO 2.1 Key Card [P71]"
-  },
-  {
-    "AAGuid": "ca87cb70-4c1b-4579-a8e8-4efdd7c007e0",
-    "Name": "FIDO Alliance TruU Sample FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "b84e4048-15dc-4dd0-8640-f4f60813c8af",
-    "Name": "NordPass"
-  },
-  {
-    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
-    "Name": "Security Key NFC by Yubico - Enterprise Edition"
-  },
-  {
-    "AAGuid": "91ad6b93-264b-4987-8737-3a690cad6917",
-    "Name": "Token Ring FIDO2 Authenticator"
-  },
-  {
-    "AAGuid": "7e3f3d30-3557-4442-bdae-139312178b39",
-    "Name": "RSA DS100"
-  },
-  {
-    "AAGuid": "998f358b-2dd2-4cbe-a43a-e8107438dfb3",
-    "Name": "OnlyKey Secp256R1 FIDO2 CTAP2 Authenticator"
-  },
-  {
-    "AAGuid": "42b4fb4a-2866-43b2-9bf7-6c6669c2e5d3",
-    "Name": "Google Titan Security Key v2"
-  },
-  {
-    "AAGuid": "0ea242b4-43c4-4a1b-8b17-dd6d0b6baec6",
-    "Name": "Keeper"
-  },
-  {
-    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
-    "Name": "Pone Biometrics OFFPAD Authenticator"
+    "AAGuid": "6028b017-b1d4-4c02-b4b3-afcdafc96bb2",
+    "Name": "Windows Hello Software Authenticator"
   },
   {
     "AAGuid": "1c086528-58d5-f211-823c-356786e36140",
     "Name": "Atos CardOS FIDO2"
   },
   {
+    "AAGuid": "aeb6569c-f8fb-4950-ac60-24ca2bbe2e52",
+    "Name": "HID Crescendo C2300"
+  },
+  {
+    "AAGuid": "504d7149-4e4c-3841-4555-55445a677357",
+    "Name": "WiSECURE AuthTron USB FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "3f59672f-20aa-4afe-b6f4-7e5e916b6d98",
+    "Name": "Arculus FIDO 2.1 Key Card [P71]"
+  },
+  {
+    "AAGuid": "c5703116-972b-4851-a3e7-ae1259843399",
+    "Name": "NEOWAVE Badgeo FIDO2"
+  },
+  {
+    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
+    "Name": "Pone Biometrics OFFPAD Authenticator"
+  },
+  {
+    "AAGuid": "8c97a730-3f7b-41a6-87d6-1e9b62bda6f0",
+    "Name": "FT-JCOS FIDO Fingerprint Card"
+  },
+  {
+    "AAGuid": "d548826e-79b4-db40-a3d8-11116f7e8349",
+    "Name": "Bitwarden"
+  },
+  {
+    "AAGuid": "f8a011f3-8c0a-4d15-8006-17111f9edc7d",
+    "Name": "Security Key by Yubico"
+  },
+  {
+    "AAGuid": "175cd298-83d2-4a26-b637-313c07a6434e",
+    "Name": "Chunghwa Telecom FIDO2 Smart Card Authenticator"
+  },
+  {
+    "AAGuid": "820d89ed-d65a-409e-85cb-f73f0578f82a",
+    "Name": "IDmelon iOS Authenticator"
+  },
+  {
+    "AAGuid": "9f77e279-a6e2-4d58-b700-31e5943c6a98",
+    "Name": "Hyper FIDO Pro"
+  },
+  {
+    "AAGuid": "d61d3b87-3e7c-4aea-9c50-441c371903ad",
+    "Name": "KeyVault Secp256R1 FIDO2 CTAP2 Authenticator"
+  },
+  {
+    "AAGuid": "4b3f8944-d4f2-4d21-bb19-764a986ec160",
+    "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
+  },
+  {
+    "AAGuid": "9ddd1817-af5a-4672-a2b9-3e3dd95000a9",
+    "Name": "Windows Hello VBS Hardware Authenticator"
+  },
+  {
+    "AAGuid": "b5397666-4885-aa6b-cebf-e52262a439a2",
+    "Name": "Chromium Browser"
+  },
+  {
+    "AAGuid": "bc2fe499-0d8e-4ffe-96f3-94a82840cf8c",
+    "Name": "OCTATCO EzQuant FIDO2 AUTHENTICATOR"
+  },
+  {
+    "AAGuid": "ee041bce-25e5-4cdb-8f86-897fd6418464",
+    "Name": "Feitian ePass FIDO2-NFC Authenticator"
+  },
+  {
+    "AAGuid": "b92c3f9a-c014-4056-887f-140a2501163b",
+    "Name": "Security Key by Yubico"
+  },
+  {
+    "AAGuid": "ab32f0c6-2239-afbb-c470-d2ef4e254db6",
+    "Name": "TEST (DUMMY RECORD)"
+  },
+  {
+    "AAGuid": "5ca1ab1e-1337-fa57-f1d0-a117e71ca702",
+    "Name": "Allthenticator App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers"
+  },
+  {
+    "AAGuid": "91ad6b93-264b-4987-8737-3a690cad6917",
+    "Name": "Token Ring FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "fec067a1-f1d0-4c5e-b4c0-cc3237475461",
+    "Name": "KX701 SmartToken FIDO"
+  },
+  {
+    "AAGuid": "b267239b-954f-4041-a01b-ee4f33c145b6",
+    "Name": "authenton1 - CTAP2.1"
+  },
+  {
+    "AAGuid": "73402251-f2a8-4f03-873e-3cb6db604b03",
+    "Name": "uTrust FIDO2 Security Key"
+  },
+  {
     "AAGuid": "a3975549-b191-fd67-b8fb-017e2917fdb3",
     "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
   },
   {
-    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
-    "Name": "Security Key by Yubico with NFC"
+    "AAGuid": "664d9f67-84a2-412a-9ff7-b4f7d8ee6d05",
+    "Name": "OpenSK authenticator"
   },
   {
-    "AAGuid": "5fdb81b8-53f0-4967-a881-f5ec26fe4d18",
-    "Name": "VinCSS FIDO2 Authenticator"
+    "AAGuid": "77010bd7-212a-4fc9-b236-d2ca5e9d4084",
+    "Name": "Feitian BioPass FIDO2 Authenticator"
   },
   {
-    "AAGuid": "73bb0cd4-e502-49b8-9c6f-b59445bf720b",
-    "Name": "YubiKey 5 FIPS Series"
+    "AAGuid": "f4c63eff-d26c-4248-801c-3736c7eaa93a",
+    "Name": "FIDO KeyPass S3"
   },
   {
-    "AAGuid": "83c47309-aabb-4108-8470-8be838b573cb",
-    "Name": "YubiKey Bio Series (Enterprise Profile)"
+    "AAGuid": "d8522d9f-575b-4866-88a9-ba99fa02f35b",
+    "Name": "YubiKey Bio Series"
   },
   {
-    "AAGuid": "9876631b-d4a0-427f-5773-0ec71c9e0279",
-    "Name": "Somu Secp256R1 FIDO2 CTAP2 Authenticator"
+    "AAGuid": "b84e4048-15dc-4dd0-8640-f4f60813c8af",
+    "Name": "NordPass"
   },
   {
-    "AAGuid": "931327dd-c89b-406c-a81e-ed7058ef36c6",
-    "Name": "Swissbit iShield FIDO2"
+    "AAGuid": "c5ef55ff-ad9a-4b9f-b580-adebafe026d0",
+    "Name": "YubiKey 5 Series with Lightning"
   },
   {
-    "AAGuid": "a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa",
-    "Name": "Security Key NFC by Yubico"
+    "AAGuid": "07a9f89c-6407-4594-9d56-621d5f1e358b",
+    "Name": "NXP Semiconductros FIDO2 Conformance Testing CTAP2 Authenticator"
+  },
+  {
+    "AAGuid": "ea9b8d66-4d01-1d21-3ce4-b6b48cb575d4",
+    "Name": "Google Password Manager"
+  },
+  {
+    "AAGuid": "361a3082-0278-4583-a16f-72a527f973e4",
+    "Name": "eWBM eFA500 FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "c1f9a0bc-1dd2-404a-b27f-8e29047a43fd",
+    "Name": "YubiKey 5 FIPS Series with NFC"
+  },
+  {
+    "AAGuid": "6002f033-3c07-ce3e-d0f7-0ffe5ed42543",
+    "Name": "Excelsecu eSecu FIDO2 Fingerprint Key"
+  },
+  {
+    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
+    "Name": "YubiKey 5 Series with NFC"
   }
 ]
