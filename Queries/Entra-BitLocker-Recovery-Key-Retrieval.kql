@@ -1,0 +1,15 @@
+// Query to find BitLocker recovery key retrieval operations and parsing of the involved device info
+AuditLogs
+| where TimeGenerated > ago(90d)
+| where OperationName == "Read BitLocker key"
+| mv-apply details = AdditionalDetails on (
+    where details.key == "AdditionalInfo"
+    | extend AdditionalInfo = tostring(details.value)
+    )
+| parse AdditionalInfo with * "Successfully retrieved BitLocker recovery key associated with key ID: '" RecoveryKeyId: guid "'. Backed up from device: '" DeviceId: guid "'"
+| project
+    TimeGenerated, 
+    ActivityDisplayName,
+    Actor = iif(isnotempty(InitiatedBy.user.userPrincipalName), InitiatedBy.user.userPrincipalName, InitiatedBy.app.appId),
+    DeviceId,
+    RecoveryKeyId
