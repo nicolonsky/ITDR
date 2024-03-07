@@ -1,7 +1,0 @@
-// Search for Accounts that leveraged device Code Authentication
-SigninLogs
-| where TimeGenerated > ago(180d)
-| where AuthenticationProtocol =~ "deviceCode"
-// Device Registration Service is used for device registration of Teams Meeting Room Devices
-//| where ResourceDisplayName !in~ ("Device Registration Service")
-| project UserPrincipalName, AppDisplayName, AppId, ResourceDisplayName, TimeGenerated, ResultType
