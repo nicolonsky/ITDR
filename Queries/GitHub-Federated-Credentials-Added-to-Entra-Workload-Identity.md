@@ -1,6 +1,12 @@
-// Tracking additions of federated credentials to Entra App Registrations aka Workload Identities for GitHub Repositories
-// Optionally, this can be checked against allowlisted repositories and organizations stored in a watchlist.
-// Furthermore, the GitRefs can be checked to ensure only main branches or certain tags are allowed for federation.
+# GitHub-Federated-Credentials-Added-to-Entra-Workload-Identity
+
+Tracking additions of federated credentials to Entra App Registrations aka Workload Identities for GitHub Repositories
+Optionally, this can be checked against allowlisted repositories and organizations stored in a watchlist.
+Furthermore, the GitRefs can be checked to ensure only main branches or certain tags are allowed for federation.
+
+## Query
+
+```kusto
 AuditLogs
 | where TimeGenerated > ago(180d)
 | where OperationName == "Update application"
@@ -25,3 +31,17 @@ AuditLogs
     GitRefs,
     Actor,
     ActorId
+```
+
+## Hunt Tags
+
+* **Author:** [Nicola Suter](https://nicolasuter.ch)
+* **License:** [MIT License](https://github.com/nicolonsky/ITDR/blob/main/LICENSE)
+
+### Additional information
+
+### MITRE ATT&CK Tags
+
+* **Tactic:** N/A
+* **Technique:**
+    * N/A

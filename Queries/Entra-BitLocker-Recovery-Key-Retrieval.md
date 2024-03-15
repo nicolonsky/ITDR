@@ -1,4 +1,10 @@
-// Query to find BitLocker recovery key retrieval operations and parsing of the involved device info
+# Entra-BitLocker-Recovery-Key-Retrieval
+
+Query to find BitLocker recovery key retrieval operations and parsing of the involved device info from Entra ID.
+
+## Query
+
+```kusto
 AuditLogs
 | where TimeGenerated > ago(90d)
 | where OperationName == "Read BitLocker key"
@@ -13,3 +19,20 @@ AuditLogs
     Actor = iif(isnotempty(InitiatedBy.user.userPrincipalName), InitiatedBy.user.userPrincipalName, InitiatedBy.app.appId),
     DeviceId,
     RecoveryKeyId
+```
+
+## Hunt Tags
+
+* **Author:** [Nicola Suter](https://nicolasuter.ch)
+* **License:** [MIT License](https://github.com/nicolonsky/ITDR/blob/main/LICENSE)
+
+### Additional information
+
+* <https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities#view-or-copy-bitlocker-keys>
+
+### MITRE ATT&CK Tags
+
+* **Tactic:** Privilege Escalation (TA0004)
+* **Technique:**
+    * N/A
+
