@@ -27,10 +27,10 @@ AuditLogs
 | project
     TimeGenerated,
     OperationName,
+    OldUserType,
     NewUserType,
     OldUserPrincipalName,
     NewUserPrincipalName,
-    OldUserType,
     Actor
 ```
 
