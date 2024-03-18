@@ -28,13 +28,6 @@ union SigninLogs, AADNonInteractiveUserSignInLogs
 
 * <https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities#view-or-copy-bitlocker-keys>
 
-## Hunt Tags
-
-* **Author:** [Nicola Suter](https://nicolasuter.ch)
-* **License:** [MIT License](https://github.com/nicolonsky/ITDR/blob/main/LICENSE)
-
-### Additional information
-
 
 ### MITRE ATT&CK Tags
 
