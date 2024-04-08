@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '0 8 */1 * *'
+    - cron: '00 8 01 * *'
   workflow_dispatch:
 
 permissions:
