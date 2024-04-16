@@ -10,7 +10,7 @@ let PassKeys = datatable (AAGuid:string, DisplayName:string)[
     "de1e552d-db1d-4423-a619-566b625cdc84", "Authenticator on Android",
 ];
 AuditLogs
-| where TimeGenerated > ago(1h)
+| where TimeGenerated > ago(90d)
 | where OperationName == "Add Passkey (device-bound) security key"
 | mv-expand AdditionalDetails
 | where AdditionalDetails.key =~ 'AAGuid'
