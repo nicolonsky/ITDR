@@ -5,23 +5,20 @@ Query to find Entra ID passkey registration events and performing a lookup of th
 ## Query
 
 ```kusto
-let AAGuids = externaldata (AAGuid: guid, Name: string) ['https://raw.githubusercontent.com/nicolonsky/ITDR/main/Watchlists/aaguids.json'] with (format=multijson);
+let PassKeys = datatable (AAGuid:string, DisplayName:string)[
+    "90a3ccdf-635c-4729-a248-9b709135078f", "Authenticator on iOS",
+    "de1e552d-db1d-4423-a619-566b625cdc84", "Authenticator on Android",
+];
 AuditLogs
-| where TimeGenerated > ago(90d)
-| where ActivityDisplayName =~ "Add FIDO2 security key"
-| mv-apply details = AdditionalDetails on (
-    where details.key =~ "AAGuid"
-    | extend AAGuid = toguid(details.value)
-    )
-| extend Actor = InitiatedBy.user.userPrincipalName
-| lookup kind=leftouter AAGuids on AAGuid
-| project-rename PasskeyName = Name
-| project
-    TimeGenerated,
-    OperationName,
-    Actor,
-    PasskeyName,
-    AAGuid
+| where TimeGenerated > ago(1h)
+| where OperationName == "Add Passkey (device-bound) security key"
+| mv-expand AdditionalDetails
+| where AdditionalDetails.key =~ 'AAGuid'
+| extend AAGuid = tostring(AdditionalDetails.value)
+| extend UserPrincipalName = InitiatedBy.user.userPrincipalName
+| lookup PassKeys on AAGuid
+| project-rename PassKeyType = DisplayName
+| project TimeGenerated, ActivityDisplayName, UserPrincipalName, PassKeyType
 ```
 
 ## Hunt Tags
@@ -38,4 +35,3 @@ AuditLogs
 * **Tactic:** Persistence (TA0003)
 * **Technique:**
     * Modify Authentication Process: Multi-Factor Authentication (T1556.006)
-
