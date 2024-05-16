@@ -9,16 +9,17 @@ let PassKeys = datatable (AAGuid:string, DisplayName:string)[
     "90a3ccdf-635c-4729-a248-9b709135078f", "Authenticator on iOS",
     "de1e552d-db1d-4423-a619-566b625cdc84", "Authenticator on Android",
 ];
+let AAGuids = externaldata (AAGuid: string, DisplayName: string) ['https://raw.githubusercontent.com/nicolonsky/ITDR/main/Watchlists/aaguids.json'] with (format=multijson);
 AuditLogs
 | where TimeGenerated > ago(90d)
-| where OperationName == "Add Passkey (device-bound) security key"
+| where OperationName in~ ("Add Passkey (device-bound)", "Add Passkey (device-bound) security key", "Add FIDO2 security key")
 | mv-expand AdditionalDetails
 | where AdditionalDetails.key =~ 'AAGuid'
 | extend AAGuid = tostring(AdditionalDetails.value)
 | extend UserPrincipalName = InitiatedBy.user.userPrincipalName
-| lookup PassKeys on AAGuid
-| project-rename PassKeyType = DisplayName
-| project TimeGenerated, ActivityDisplayName, UserPrincipalName, PassKeyType
+| lookup (union AAGuids, PassKeys) on AAGuid
+| extend PassKeyType = iif(isnotempty( DisplayName), DisplayName, AAGuid)
+| project TimeGenerated, ActivityDisplayName, UserPrincipalName, PassKeyType, AAGuid
 ```
 
 ## Hunt Tags
