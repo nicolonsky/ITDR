@@ -16,17 +16,15 @@ jobs:
       - uses: actions/checkout@v3
       - name: Dump AAGUIDs
         run: |
-          $uri = 'https://github.com/passkeydeveloper/passkey-authenticator-aaguids/raw/main/combined_aaguid.json'
+          $uri = 'https://raw.githubusercontent.com/nicolonsky/AAGuids/main/public/mdsblob.json'
           $targetPath = 'Watchlists/aaguids.json'
           $data = Invoke-RestMethod -Uri $uri
-          $aaGuidInfo = @{}
-          $data.psobject.properties.name | ForEach-Object { $aaGuidInfo[$PSItem] = $data.$PSItem }
-          $aaGuidInfo.GetEnumerator() | ForEach-Object {
-              [PSCustomObject]@{
-                  AAGuid = $_.Key
-                  Name = $_.Value.Name
-              }
-          } | ConvertTo-Json | Set-Content $targetPath -Encoding utf8 -Force    
+          $data | Where-Object {$_.protocolFamily -eq "fido2"} | ForEach-Object { 
+            [PSCustomObject]@{
+              AAGuid = $PSItem.aaguid
+              Name = $PSItem.description
+            }
+          } | Sort-Object -Property Name | ConvertTo-Json | Set-Content $targetPath -Encoding utf8 -Force
         shell: pwsh
       - name: Commit and push changes
         run: |
