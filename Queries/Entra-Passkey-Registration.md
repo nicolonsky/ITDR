@@ -5,7 +5,7 @@ Query to find Entra ID passkey registration events and performing a lookup of th
 ## Query
 
 ```kusto
-let PassKeys = datatable (AAGuid:string, Name:string)[
+let PassKeys = datatable (AAGuid: string, Name: string)[
     "90a3ccdf-635c-4729-a248-9b709135078f", "Authenticator on iOS",
     "de1e552d-db1d-4423-a619-566b625cdc84", "Authenticator on Android",
 ];
@@ -18,7 +18,7 @@ AuditLogs
 | extend AAGuid = tostring(AdditionalDetails.value)
 | extend UserPrincipalName = InitiatedBy.user.userPrincipalName
 | lookup (union AAGuids, PassKeys) on AAGuid
-| extend PassKeyType = iif(isnotempty( Name), Name, AAGuid)
+| extend PassKeyType = coalesce(Name, AAGuid)
 | project TimeGenerated, ActivityDisplayName, UserPrincipalName, PassKeyType, AAGuid
 ```
 
