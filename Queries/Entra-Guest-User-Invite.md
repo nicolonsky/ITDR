@@ -1,4 +1,4 @@
-# Entra-Guest-User-Invite.md
+# Entra-Guest-User-Invite
 
 KQL Query to find guest user additions within Entra ID and the corresponding actor who invited the guest account. B2B guest users can be added by inviting the external user either when user permissions haven't been limited or by Entra ID admins.
 
