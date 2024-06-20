@@ -1,6 +1,6 @@
 # Entra-User-AuthenticationMethod-Change
 
-KQL Query to find authentication method changes that could be leveraged for account takeover scenarios:
+KQL Query to detect potential account takeover activities within Entra ID via the following activities:
 
 - Password Reset
 - Registration of Temporary Access Pass
@@ -10,7 +10,7 @@ KQL Query to find authentication method changes that could be leveraged for acco
 
 ### Sentinel
 ```kusto
-// Potential Account Takeover activities by resetting passwords or security information
+// 
 AuditLogs
 | where TimeGenerated > ago(360d)
 | where OperationName in~ ("Reset password (by admin)", "Admin registered security info", "Admin deleted security info")
@@ -18,7 +18,13 @@ AuditLogs
 | extend ActorDisplayName = coalesce(tostring(InitiatedBy.app.displayName), tostring(InitiatedBy.user.userPrincipalName))
 | mv-expand TargetResources
 | extend TargetUser = coalesce(TargetResources.userPrincipalName, TargetResources.displayName, TargetResources.id)
-| project TimeGenerated, OperationName, ResultDescription ,TargetUser, ActorDisplayName, ActorId
+| project
+    TimeGenerated,
+    OperationName,
+    ResultDescription,
+    TargetUser = '{PII Removed}',
+    ActorDisplayName = '{PII Removed}',
+    ActorId
 ```
 
 ### Example
