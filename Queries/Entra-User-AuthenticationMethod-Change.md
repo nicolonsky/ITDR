@@ -10,7 +10,6 @@ KQL Query to detect potential account takeover activities within Entra ID via th
 
 ### Sentinel
 ```kusto
-// 
 AuditLogs
 | where TimeGenerated > ago(360d)
 | where OperationName in~ ("Reset password (by admin)", "Admin registered security info", "Admin deleted security info")
@@ -22,8 +21,8 @@ AuditLogs
     TimeGenerated,
     OperationName,
     ResultDescription,
-    TargetUser = '{PII Removed}',
-    ActorDisplayName = '{PII Removed}',
+    TargetUser,
+    ActorDisplayName,
     ActorId
 ```
 
