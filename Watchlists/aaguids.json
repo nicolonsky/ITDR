@@ -64,6 +64,10 @@
     "Name": "Cryptnox FIDO2"
   },
   {
+    "AAGuid": "6dae43be-af9c-417b-8b9f-1b611168ec60",
+    "Name": "Dapple Authenticator from Dapple Security Inc."
+  },
+  {
     "AAGuid": "1105e4ed-af1d-02ff-ffff-ffffffffffff",
     "Name": "Egomet FIDO2 Authenticator for Android"
   },
@@ -112,20 +116,20 @@
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
-    "AAGuid": "a3975549-b191-fd67-b8fb-017e2917fdb3",
-    "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
-  },
-  {
     "AAGuid": "fbefdf68-fe86-0106-213e-4d5fa24cbe2e",
     "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
   },
   {
-    "AAGuid": "bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a",
-    "Name": "Excelsecu eSecu FIDO2 PRO Security Key"
+    "AAGuid": "a3975549-b191-fd67-b8fb-017e2917fdb3",
+    "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
   },
   {
     "AAGuid": "0d9b2e56-566b-c393-2940-f821b7f15d6d",
     "Name": "Excelsecu eSecu FIDO2 Pro Security Key"
+  },
+  {
+    "AAGuid": "bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a",
+    "Name": "Excelsecu eSecu FIDO2 PRO Security Key"
   },
   {
     "AAGuid": "cdbdaea2-c415-5073-50f7-c04e968640b6",
@@ -376,19 +380,19 @@
     "Name": "Samsung Pass"
   },
   {
-    "AAGuid": "b92c3f9a-c014-4056-887f-140a2501163b",
-    "Name": "Security Key by Yubico"
-  },
-  {
     "AAGuid": "f8a011f3-8c0a-4d15-8006-17111f9edc7d",
     "Name": "Security Key by Yubico"
   },
   {
-    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
-    "Name": "Security Key by Yubico with NFC"
+    "AAGuid": "b92c3f9a-c014-4056-887f-140a2501163b",
+    "Name": "Security Key by Yubico"
   },
   {
     "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
+    "Name": "Security Key by Yubico with NFC"
+  },
+  {
+    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
     "Name": "Security Key by Yubico with NFC"
   },
   {
@@ -400,11 +404,11 @@
     "Name": "Security Key NFC by Yubico"
   },
   {
-    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
+    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
-    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
+    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
@@ -442,6 +446,14 @@
   {
     "AAGuid": "5d629218-d3a5-11ed-afa1-0242ac120002",
     "Name": "Swissbit iShield Key Pro"
+  },
+  {
+    "AAGuid": "092277e5-8437-46b5-b911-ea64b294acb7",
+    "Name": "Taglio CTAP2.1 CS"
+  },
+  {
+    "AAGuid": "7d2afadd-bf6b-44a2-a66b-e831fceb8eff",
+    "Name": "Taglio CTAP2.1 EP"
   },
   {
     "AAGuid": "ab32f0c6-2239-afbb-c470-d2ef4e254db6",
@@ -548,19 +560,19 @@
     "Name": "YubiKey 5 Series"
   },
   {
-    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
-    "Name": "YubiKey 5 Series"
-  },
-  {
     "AAGuid": "cb69481e-8ff7-4039-93ec-0a2729a154a8",
     "Name": "YubiKey 5 Series"
   },
   {
-    "AAGuid": "a02167b9-ae71-4ac7-9a07-06432ebb6f1c",
-    "Name": "YubiKey 5 Series with Lightning"
+    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
+    "Name": "YubiKey 5 Series"
   },
   {
     "AAGuid": "c5ef55ff-ad9a-4b9f-b580-adebafe026d0",
+    "Name": "YubiKey 5 Series with Lightning"
+  },
+  {
+    "AAGuid": "a02167b9-ae71-4ac7-9a07-06432ebb6f1c",
     "Name": "YubiKey 5 Series with Lightning"
   },
   {
@@ -568,7 +580,7 @@
     "Name": "YubiKey 5 Series with Lightning Preview"
   },
   {
-    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
+    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
@@ -576,7 +588,7 @@
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
+    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
