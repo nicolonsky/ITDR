@@ -160,6 +160,10 @@
     "Name": "Feitian ePass FIDO2-NFC Authenticator"
   },
   {
+    "AAGuid": "260e3021-482d-442d-838c-7edfbe153b7e",
+    "Name": "Feitian ePass FIDO2-NFC Plus Authenticator"
+  },
+  {
     "AAGuid": "234cd403-35a2-4cc2-8015-77ea280c77f5",
     "Name": "Feitian ePass FIDO2-NFC Series (CTAP2.1, CTAP2.0, U2F)"
   },
@@ -336,6 +340,14 @@
     "Name": "OneSpan DIGIPASS FX1 BIO"
   },
   {
+    "AAGuid": "30b5035e-d297-4ff1-010b-addc96ba6a98",
+    "Name": "OneSpan DIGIPASS FX1a"
+  },
+  {
+    "AAGuid": "30b5035e-d297-4ff7-b00b-addc96ba6a98",
+    "Name": "OneSpan DIGIPASS FX7"
+  },
+  {
     "AAGuid": "30b5035e-d297-4fc1-b00b-addc96ba6a97",
     "Name": "OneSpan FIDO Touch"
   },
@@ -348,11 +360,11 @@
     "Name": "OpenSK authenticator"
   },
   {
-    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
+    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
     "Name": "Pone Biometrics OFFPAD Authenticator"
   },
   {
-    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
+    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
     "Name": "Pone Biometrics OFFPAD Authenticator"
   },
   {
@@ -380,11 +392,11 @@
     "Name": "Samsung Pass"
   },
   {
-    "AAGuid": "f8a011f3-8c0a-4d15-8006-17111f9edc7d",
+    "AAGuid": "b92c3f9a-c014-4056-887f-140a2501163b",
     "Name": "Security Key by Yubico"
   },
   {
-    "AAGuid": "b92c3f9a-c014-4056-887f-140a2501163b",
+    "AAGuid": "f8a011f3-8c0a-4d15-8006-17111f9edc7d",
     "Name": "Security Key by Yubico"
   },
   {
@@ -404,11 +416,11 @@
     "Name": "Security Key NFC by Yubico"
   },
   {
-    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
+    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
-    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
+    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
