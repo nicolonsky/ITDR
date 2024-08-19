@@ -15,11 +15,13 @@ AuditLogs
 | where OperationName in~ ("Add Passkey (device-bound)", "Add Passkey (device-bound) security key", "Add FIDO2 security key")
 | mv-expand AdditionalDetails
 | where AdditionalDetails.key =~ 'AAGuid'
+| mv-expand TargetResources
 | extend AAGuid = tostring(AdditionalDetails.value)
-| extend UserPrincipalName = InitiatedBy.user.userPrincipalName
+| extend Actor = coalesce(InitiatedBy.user.userPrincipalName, InitiatedBy.user.id)
+| extend TargetUser= TargetResources.userPrincipalName
 | lookup (union AAGuids, PassKeys) on AAGuid
 | extend PassKeyType = coalesce(Name, AAGuid)
-| project TimeGenerated, ActivityDisplayName, UserPrincipalName, PassKeyType, AAGuid
+| project TimeGenerated, ActivityDisplayName, TargetUser, Actor, PassKeyType, AAGuid
 ```
 
 ## Hunt Tags
