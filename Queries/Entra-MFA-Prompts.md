@@ -6,17 +6,19 @@ Review users that got MFA prompts due to MFA enforcement and display some contex
 
 ```kusto
 SigninLogs
-| where TimeGenerated > ago(7d)
-| where AuthenticationRequirement =~ 'multiFactorAuthentication'
-| where ResultType == 0
+| where TimeGenerated > ago(1d)
+// uncomment to only get successful sign-ins
+//| where ResultType in (0, 50140)
+| where AuthenticationRequirement =~ 'multifactorAuthentication'
 | mv-expand parse_json(AuthenticationDetails)
+| where AuthenticationDetails.authenticationStepResultDetail !in~ ("MFA requirement satisfied by claim in the token", "First factor requirement satisfied by claim in the token")
 | extend OperatingSystem = tostring(DeviceDetail.operatingSystem)
 | extend isEntraDevice = isnotempty(DeviceDetail.isManaged)
 | extend AuthenticationMethod = tostring(AuthenticationDetails.authenticationMethod)
 | extend AuthenticationStepResultDetail = tostring(AuthenticationDetails.authenticationStepResultDetail)
 | extend Browser = coalesce(DeviceDetail.browser, ClientAppUsed)
-| where AuthenticationMethod !~ 'Previously satisfied'
-| summarize SignInCount = count() by OperatingSystem, isEntraDevice, AuthenticationMethod, UserPrincipalName, Browser//, AppDisplayName,Browser
+| extend Result = coalesce(ResultDescription, ResultType)
+| summarize count() by UserPrincipalName, OperatingSystem, isEntraDevice, Browser, AppDisplayName, Result
 ```
 
 ## Hunt Tags
