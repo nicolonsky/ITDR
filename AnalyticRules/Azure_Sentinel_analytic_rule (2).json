@@ -1,0 +1,81 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspace": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/0693eef5-6325-4a20-8963-7c05d506f6ef')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/0693eef5-6325-4a20-8963-7c05d506f6ef')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
+            "kind": "NRT",
+            "apiVersion": "2023-12-01-preview",
+            "properties": {
+                "displayName": "NRT User elevated access to User Access Administrator for Azure Resources (MCAS)",
+                "description": "Entra ID Global Administrators can elevate their access to all subscriptions and management groups in a tenant.\nElevated access is highly privileged access and might be used to laterally move from Entra ID to Azure resouces.\nAdditional information: https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin.",
+                "severity": "Medium",
+                "enabled": true,
+                "query": "// Detect elevation via MCAS\nCloudAppEvents\n| where RawEventData.operationName == \"Microsoft.Authorization/elevateAccess/action\"\n| extend EvidenceRole = extract_json('$.evidence.role', tostring(RawEventData.authorization))\n| project\n    TimeGenerated,\n    Actor = AccountId,\n    OperationName = EvidenceRole,\n    IPAddress,\n    Result = RawEventData.status,\n    LoggedByService = Type\n| where Result =~ \"Succeeded\" // Uncomment to detect attempts",
+                "suppressionDuration": "PT5H",
+                "suppressionEnabled": false,
+                "tactics": [
+                    "PrivilegeEscalation",
+                    "Persistence"
+                ],
+                "techniques": [
+                    "T1078"
+                ],
+                "subTechniques": [
+                    "T1078.004"
+                ],
+                "alertRuleTemplateName": null,
+                "incidentConfiguration": {
+                    "createIncident": true,
+                    "groupingConfiguration": {
+                        "enabled": false,
+                        "reopenClosedIncident": false,
+                        "lookbackDuration": "PT5H",
+                        "matchingMethod": "AllEntities",
+                        "groupByEntities": [],
+                        "groupByAlertDetails": [],
+                        "groupByCustomDetails": []
+                    }
+                },
+                "eventGroupingSettings": {
+                    "aggregationKind": "SingleAlert"
+                },
+                "alertDetailsOverride": {
+                    "alertDynamicProperties": []
+                },
+                "customDetails": {
+                    "OperationName": "OperationName"
+                },
+                "entityMappings": [
+                    {
+                        "entityType": "Account",
+                        "fieldMappings": [
+                            {
+                                "identifier": "AadUserId",
+                                "columnName": "Actor"
+                            }
+                        ]
+                    },
+                    {
+                        "entityType": "IP",
+                        "fieldMappings": [
+                            {
+                                "identifier": "Address",
+                                "columnName": "IPAddress"
+                            }
+                        ]
+                    }
+                ],
+                "sentinelEntitiesMappings": null,
+                "templateVersion": null
+            }
+        }
+    ]
+}
