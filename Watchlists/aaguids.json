@@ -13,7 +13,7 @@
   },
   {
     "AAGuid": "5ca1ab1e-1337-fa57-f1d0-a117e71ca702",
-    "Name": "Allthenticator App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers"
+    "Name": "Allthenticator iOS App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers"
   },
   {
     "AAGuid": "b93fd961-f2e6-462f-b122-82002247de78",
@@ -128,12 +128,12 @@
     "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
   },
   {
-    "AAGuid": "bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a",
-    "Name": "Excelsecu eSecu FIDO2 PRO Security Key"
-  },
-  {
     "AAGuid": "0d9b2e56-566b-c393-2940-f821b7f15d6d",
     "Name": "Excelsecu eSecu FIDO2 Pro Security Key"
+  },
+  {
+    "AAGuid": "bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a",
+    "Name": "Excelsecu eSecu FIDO2 PRO Security Key"
   },
   {
     "AAGuid": "cdbdaea2-c415-5073-50f7-c04e968640b6",
@@ -284,6 +284,10 @@
     "Name": "IDPrime 941 Fido"
   },
   {
+    "AAGuid": "4b89f401-464e-4745-a520-486ddfc5d80e",
+    "Name": "IIST FIDO2 Authenticator"
+  },
+  {
     "AAGuid": "4c50ff10-1057-4fc6-b8ed-43a529530c3c",
     "Name": "ImproveID Authenticator"
   },
@@ -296,11 +300,11 @@
     "Name": "KeyVault Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
-    "AAGuid": "4b3f8944-d4f2-4d21-bb19-764a986ec160",
+    "AAGuid": "ec31b4cc-2acc-4b8e-9c01-bade00ccbe26",
     "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
-    "AAGuid": "ec31b4cc-2acc-4b8e-9c01-bade00ccbe26",
+    "AAGuid": "4b3f8944-d4f2-4d21-bb19-764a986ec160",
     "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
@@ -332,6 +336,10 @@
     "Name": "NEOWAVE Winkeo FIDO2"
   },
   {
+    "AAGuid": "2cd2f727-f6ca-44da-8f48-5c2e5da000a2",
+    "Name": "Nitrokey 3 AM"
+  },
+  {
     "AAGuid": "07a9f89c-6407-4594-9d56-621d5f1e358b",
     "Name": "NXP Semiconductros FIDO2 Conformance Testing CTAP2 Authenticator"
   },
@@ -346,6 +354,10 @@
   {
     "AAGuid": "bc2fe499-0d8e-4ffe-96f3-94a82840cf8c",
     "Name": "OCTATCO EzQuant FIDO2 AUTHENTICATOR"
+  },
+  {
+    "AAGuid": "69e7c36f-f2f6-9e0d-07a6-bcc243262e6b",
+    "Name": "OneKey FIDO2 Authenticator"
   },
   {
     "AAGuid": "30b5035e-d297-4ff1-b00b-addc96ba6a98",
@@ -372,11 +384,11 @@
     "Name": "OpenSK authenticator"
   },
   {
-    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
+    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
     "Name": "Pone Biometrics OFFPAD Authenticator"
   },
   {
-    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
+    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
     "Name": "Pone Biometrics OFFPAD Authenticator"
   },
   {
@@ -420,27 +432,27 @@
     "Name": "Security Key by Yubico"
   },
   {
-    "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
-    "Name": "Security Key by Yubico with NFC"
-  },
-  {
     "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
     "Name": "Security Key by Yubico with NFC"
   },
   {
-    "AAGuid": "a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa",
-    "Name": "Security Key NFC by Yubico"
+    "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
+    "Name": "Security Key by Yubico with NFC"
   },
   {
     "AAGuid": "e77e3c64-05e3-428b-8824-0cbeb04b829d",
     "Name": "Security Key NFC by Yubico"
   },
   {
-    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
-    "Name": "Security Key NFC by Yubico - Enterprise Edition"
+    "AAGuid": "a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa",
+    "Name": "Security Key NFC by Yubico"
   },
   {
     "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
+    "Name": "Security Key NFC by Yubico - Enterprise Edition"
+  },
+  {
+    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
@@ -596,11 +608,11 @@
     "Name": "YubiKey 5 FIPS Series with NFC Preview"
   },
   {
-    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
+    "AAGuid": "ee882879-721c-4913-9775-3dfcce97072a",
     "Name": "YubiKey 5 Series"
   },
   {
-    "AAGuid": "ee882879-721c-4913-9775-3dfcce97072a",
+    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
     "Name": "YubiKey 5 Series"
   },
   {
@@ -632,11 +644,11 @@
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
+    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
+    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
