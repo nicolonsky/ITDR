@@ -132,11 +132,11 @@
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Key"
   },
   {
-    "AAGuid": "d384db22-4d50-ebde-2eac-5765cf1e2a44",
+    "AAGuid": "20f0be98-9af9-986a-4b42-8eca4acb28e4",
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
-    "AAGuid": "20f0be98-9af9-986a-4b42-8eca4acb28e4",
+    "AAGuid": "d384db22-4d50-ebde-2eac-5765cf1e2a44",
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
@@ -264,6 +264,10 @@
     "Name": "HID Crescendo Key V2"
   },
   {
+    "AAGuid": "7991798a-a7f3-487f-98c0-3faf7a458a04",
+    "Name": "HID Crescendo Key V3"
+  },
+  {
     "AAGuid": "3e078ffd-4c54-4586-8baa-a77da113aec5",
     "Name": "Hideez Key 3 FIDO2"
   },
@@ -286,6 +290,14 @@
   {
     "AAGuid": "bb405265-40cf-4115-93e5-a332c1968d8c",
     "Name": "ID-One Card"
+  },
+  {
+    "AAGuid": "82b0a720-127a-4788-b56d-d1d4b2d82eac",
+    "Name": "ID-One Key"
+  },
+  {
+    "AAGuid": "f2145e86-211e-4931-b874-e22bba7d01cc",
+    "Name": "ID-One Key"
   },
   {
     "AAGuid": "e86addcd-7711-47e5-b42a-c18257b0bf61",
@@ -396,6 +408,10 @@
     "Name": "OneKey FIDO2 Authenticator"
   },
   {
+    "AAGuid": "70e7c36f-f2f6-9e0d-07a6-bcc243262e6b",
+    "Name": "OneKey FIDO2 Bluetooth Authenticator"
+  },
+  {
     "AAGuid": "30b5035e-d297-4ff1-b00b-addc96ba6a98",
     "Name": "OneSpan DIGIPASS FX1 BIO"
   },
@@ -476,19 +492,19 @@
     "Name": "Security Key by Yubico with NFC"
   },
   {
-    "AAGuid": "e77e3c64-05e3-428b-8824-0cbeb04b829d",
-    "Name": "Security Key NFC by Yubico"
-  },
-  {
     "AAGuid": "a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa",
     "Name": "Security Key NFC by Yubico"
   },
   {
-    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
-    "Name": "Security Key NFC by Yubico - Enterprise Edition"
+    "AAGuid": "e77e3c64-05e3-428b-8824-0cbeb04b829d",
+    "Name": "Security Key NFC by Yubico"
   },
   {
     "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
+    "Name": "Security Key NFC by Yubico - Enterprise Edition"
+  },
+  {
+    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
@@ -564,11 +580,11 @@
     "Name": "TOKEN2 PIN Plus Security Key Series "
   },
   {
-    "AAGuid": "95e4d58c-056e-4a65-866d-f5a69659e880",
+    "AAGuid": "ba86dc56-635f-4141-aef6-00227b1b9af6",
     "Name": "TruU Windows Authenticator"
   },
   {
-    "AAGuid": "ba86dc56-635f-4141-aef6-00227b1b9af6",
+    "AAGuid": "95e4d58c-056e-4a65-866d-f5a69659e880",
     "Name": "TruU Windows Authenticator"
   },
   {
@@ -632,16 +648,32 @@
     "Name": "WiSECURE Blentity FIDO2 Authenticator"
   },
   {
+    "AAGuid": "57f7de54-c807-4eab-b1c6-1c9be7984e92",
+    "Name": "YubiKey 5 FIPS Series"
+  },
+  {
     "AAGuid": "73bb0cd4-e502-49b8-9c6f-b59445bf720b",
     "Name": "YubiKey 5 FIPS Series"
+  },
+  {
+    "AAGuid": "905b4cb4-ed6f-4da9-92fc-45e0d4e9b5c7",
+    "Name": "YubiKey 5 FIPS Series (Enterprise Profile)"
   },
   {
     "AAGuid": "d2fbd093-ee62-488d-9dad-1e36389f8826",
     "Name": "YubiKey 5 FIPS Series (RC Preview)"
   },
   {
+    "AAGuid": "7b96457d-e3cd-432b-9ceb-c9fdd7ef7432",
+    "Name": "YubiKey 5 FIPS Series with Lightning"
+  },
+  {
     "AAGuid": "85203421-48f9-4355-9bc8-8a53846e5083",
     "Name": "YubiKey 5 FIPS Series with Lightning"
+  },
+  {
+    "AAGuid": "3a662962-c6d4-4023-bebb-98ae92e78e20",
+    "Name": "YubiKey 5 FIPS Series with Lightning (Enterprise Profile)"
   },
   {
     "AAGuid": "9e66c661-e428-452a-a8fb-51f7ed088acf",
@@ -656,6 +688,14 @@
     "Name": "YubiKey 5 FIPS Series with NFC"
   },
   {
+    "AAGuid": "fcc0118f-cd45-435b-8da1-9782b2da0715",
+    "Name": "YubiKey 5 FIPS Series with NFC"
+  },
+  {
+    "AAGuid": "79f3c8ba-9e35-484b-8f47-53a5a0f5c630",
+    "Name": "YubiKey 5 FIPS Series with NFC (Enterprise Profile)"
+  },
+  {
     "AAGuid": "ce6bf97f-9f69-4ba7-9032-97adc6ca5cf1",
     "Name": "YubiKey 5 FIPS Series with NFC (RC Preview)"
   },
@@ -664,15 +704,15 @@
     "Name": "YubiKey 5 FIPS Series with NFC Preview"
   },
   {
+    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
+    "Name": "YubiKey 5 Series"
+  },
+  {
     "AAGuid": "ee882879-721c-4913-9775-3dfcce97072a",
     "Name": "YubiKey 5 Series"
   },
   {
     "AAGuid": "cb69481e-8ff7-4039-93ec-0a2729a154a8",
-    "Name": "YubiKey 5 Series"
-  },
-  {
-    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
     "Name": "YubiKey 5 Series"
   },
   {
@@ -700,11 +740,11 @@
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
+    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
+    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
