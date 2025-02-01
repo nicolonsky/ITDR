@@ -72,6 +72,10 @@
     "Name": "Cryptnox FIDO2"
   },
   {
+    "AAGuid": "1d1b4e33-76a1-47fb-97a0-14b10d0933f1",
+    "Name": "Cryptnox FIDO2.1"
+  },
+  {
     "AAGuid": "6dae43be-af9c-417b-8b9f-1b611168ec60",
     "Name": "Dapple Authenticator from Dapple Security Inc."
   },
@@ -140,11 +144,11 @@
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
-    "AAGuid": "a3975549-b191-fd67-b8fb-017e2917fdb3",
+    "AAGuid": "fbefdf68-fe86-0106-213e-4d5fa24cbe2e",
     "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
   },
   {
-    "AAGuid": "fbefdf68-fe86-0106-213e-4d5fa24cbe2e",
+    "AAGuid": "a3975549-b191-fd67-b8fb-017e2917fdb3",
     "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
   },
   {
@@ -224,6 +228,10 @@
     "Name": "FIDO KeyPass S3"
   },
   {
+    "AAGuid": "46544d5d-8f5d-4db4-89ac-ea8977073fff",
+    "Name": "Foongtone FIDO Authenticator"
+  },
+  {
     "AAGuid": "8c97a730-3f7b-41a6-87d6-1e9b62bda6f0",
     "Name": "FT-JCOS FIDO Fingerprint Card"
   },
@@ -238,6 +246,10 @@
   {
     "AAGuid": "3b1adb99-0dfe-46fd-90b8-7f7614a4de2a",
     "Name": "GoTrust Idem Key FIDO2 Authenticator"
+  },
+  {
+    "AAGuid": "773c30d9-5919-4e96-a4f5-db65e95cf890",
+    "Name": "GSTAG OAK FIDO2 Authenticator"
   },
   {
     "AAGuid": "2a55aee6-27cb-42c0-bc6e-04efe999e88a",
@@ -484,11 +496,11 @@
     "Name": "Security Key by Yubico"
   },
   {
-    "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
+    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
     "Name": "Security Key by Yubico with NFC"
   },
   {
-    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
+    "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
     "Name": "Security Key by Yubico with NFC"
   },
   {
@@ -500,12 +512,24 @@
     "Name": "Security Key NFC by Yubico"
   },
   {
+    "AAGuid": "b7d3f68e-88a6-471e-9ecf-2df26d041ede",
+    "Name": "Security Key NFC by Yubico"
+  },
+  {
+    "AAGuid": "ed042a3a-4b22-4455-bb69-a267b652ae7e",
+    "Name": "Security Key NFC by Yubico - Enterprise Edition"
+  },
+  {
     "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
     "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
+  },
+  {
+    "AAGuid": "72c6b72d-8512-4c66-8359-9d3d10d9222f",
+    "Name": "Security Key NFC by Yubico - Enterprise Edition (Enterprise Profile)"
   },
   {
     "AAGuid": "9ff4cc65-6154-4fff-ba09-9e2af7882ad2",
@@ -600,6 +624,14 @@
     "Name": "VALMIDO PRO FIDO"
   },
   {
+    "AAGuid": "5ea308b2-7ac7-48b9-ac09-7e2da9015f8c",
+    "Name": "Veridium Android SDK"
+  },
+  {
+    "AAGuid": "6e8d1eae-8d40-4c25-bcf8-4633959afc71",
+    "Name": "Veridium iOS SDK"
+  },
+  {
     "AAGuid": "d94a29d9-52dd-4247-9c2d-8b818b610389",
     "Name": "VeriMark Guard Fingerprint Key"
   },
@@ -664,11 +696,11 @@
     "Name": "YubiKey 5 FIPS Series (RC Preview)"
   },
   {
-    "AAGuid": "7b96457d-e3cd-432b-9ceb-c9fdd7ef7432",
+    "AAGuid": "85203421-48f9-4355-9bc8-8a53846e5083",
     "Name": "YubiKey 5 FIPS Series with Lightning"
   },
   {
-    "AAGuid": "85203421-48f9-4355-9bc8-8a53846e5083",
+    "AAGuid": "7b96457d-e3cd-432b-9ceb-c9fdd7ef7432",
     "Name": "YubiKey 5 FIPS Series with Lightning"
   },
   {
@@ -704,11 +736,11 @@
     "Name": "YubiKey 5 FIPS Series with NFC Preview"
   },
   {
-    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
+    "AAGuid": "ee882879-721c-4913-9775-3dfcce97072a",
     "Name": "YubiKey 5 Series"
   },
   {
-    "AAGuid": "ee882879-721c-4913-9775-3dfcce97072a",
+    "AAGuid": "19083c3d-8383-4b18-bc03-8f1c9ab2fd1b",
     "Name": "YubiKey 5 Series"
   },
   {
@@ -716,7 +748,15 @@
     "Name": "YubiKey 5 Series"
   },
   {
+    "AAGuid": "ff4dac45-ede8-4ec2-aced-cf66103f4335",
+    "Name": "YubiKey 5 Series"
+  },
+  {
     "AAGuid": "20ac7a17-c814-4833-93fe-539f0d5e3389",
+    "Name": "YubiKey 5 Series (Enterprise Profile)"
+  },
+  {
+    "AAGuid": "4599062e-6926-4fe7-9566-9e8fb1aedaa0",
     "Name": "YubiKey 5 Series (Enterprise Profile)"
   },
   {
@@ -728,12 +768,24 @@
     "Name": "YubiKey 5 Series with Lightning"
   },
   {
+    "AAGuid": "24673149-6c86-42e7-98d9-433fb5b73296",
+    "Name": "YubiKey 5 Series with Lightning"
+  },
+  {
+    "AAGuid": "3b24bf49-1d45-4484-a917-13175df0867b",
+    "Name": "YubiKey 5 Series with Lightning (Enterprise Profile)"
+  },
+  {
     "AAGuid": "b90e7dc1-316e-4fee-a25a-56a666a670fe",
     "Name": "YubiKey 5 Series with Lightning (Enterprise Profile)"
   },
   {
     "AAGuid": "3124e301-f14e-4e38-876d-fbeeb090e7bf",
     "Name": "YubiKey 5 Series with Lightning Preview"
+  },
+  {
+    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
+    "Name": "YubiKey 5 Series with NFC"
   },
   {
     "AAGuid": "a25342c0-3cdc-4414-8e46-f4807fca511c",
@@ -744,11 +796,15 @@
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
+    "AAGuid": "d7781e5d-e353-46aa-afe2-3ca49f13332a",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
     "AAGuid": "1ac71f64-468d-4fe0-bef1-0e5f2f551f18",
+    "Name": "YubiKey 5 Series with NFC (Enterprise Profile)"
+  },
+  {
+    "AAGuid": "6ab56fad-881f-4a43-acb2-0be065924522",
     "Name": "YubiKey 5 Series with NFC (Enterprise Profile)"
   },
   {
@@ -764,7 +820,19 @@
     "Name": "YubiKey Bio Series"
   },
   {
+    "AAGuid": "7409272d-1ff9-4e10-9fc9-ac0019c124fd",
+    "Name": "YubiKey Bio Series"
+  },
+  {
+    "AAGuid": "ad08c78a-4e41-49b9-86a2-ac15b06899e2",
+    "Name": "YubiKey Bio Series "
+  },
+  {
     "AAGuid": "90636e1f-ef82-43bf-bdcf-5255f139d12f",
+    "Name": "YubiKey Bio Series - Multi-protocol Edition"
+  },
+  {
+    "AAGuid": "34744913-4f57-4e6e-a527-e9ec3c4b94e6",
     "Name": "YubiKey Bio Series - Multi-protocol Edition"
   },
   {
@@ -773,6 +841,10 @@
   },
   {
     "AAGuid": "97e6a830-c952-4740-95fc-7c78dc97ce47",
+    "Name": "YubiKey Bio Series - Multi-protocol Edition (Enterprise Profile)"
+  },
+  {
+    "AAGuid": "6ec5cff2-a0f9-4169-945b-f33b563f7b99",
     "Name": "YubiKey Bio Series - Multi-protocol Edition (Enterprise Profile)"
   },
   {
