@@ -40,6 +40,19 @@ union withsource=_TableName
     by _TableName
 | sort by AvgBilledSizeDaily desc
 ```
+### Optional TI map capabilities
+Optionally, you can join the above query with an overview about tables having OOTB Sentinel Analytics rules for threat intelligence (IoC) matching.
+
+```kusto
+let Metadata = datatable (_TableName:string, TIMapRule:dynamic) [
+    "DeviceNetworkEvents", dynamic(["TI Map Domain Entity to DeviceNetworkEvents", "TI Map URL Entity to DeviceNetworkEvents", "TI Map IP Entity to DeviceNetworkEvents", "TI map IP entity to Network Session Events (ASIM Network Session schema)"]),
+    "DeviceFileEvents", dynamic(["TI map File Hash to DeviceFileEvents Event"]),
+    "CloudAppEvents", dynamic(["TI map Domain entity to Cloud App Events", "TI map Email entity to Cloud App Events", "TI map File Hash entity to Cloud App Events", "TI map IP entity to Cloud App Events", "TI map URL entity to Cloud App Events" ]),
+    "UrlClickEvents", dynamic(["TI Map URL Entity to UrlClickEvents"]), 
+    "EmailEvents", dynamic(["TI map Domain entity to EmailEvents", "TI map Email entity to EmailEvents"]),
+    "EmailUrlInfo", dynamic(["TI map Domain entity to EmailUrlInfo"]),
+];
+```
 
 ## Hunt Tags
 
@@ -48,7 +61,8 @@ union withsource=_TableName
 
 ### Additional information
 
-* <https://learn.microsoft.com/en-us/azure/sentinel/connect-microsoft-365-defender?tabs=MDE>
+* <https://learn.microsoft.com/en-us/azure/sentinel/connect-microsoft-365-defender>
+* <https://learn.microsoft.com/en-us/azure/sentinel/use-threat-indicators-in-analytics-rules>
 
 ### MITRE ATT&CK Tags
 
