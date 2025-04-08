@@ -32,6 +32,10 @@ union
 | distinct AnalyticRule
 ```
 
+## PowerShell (Azure REST API)
+
+Charbel Nemnom published a nice snippet leveraging the REST API to identify matches: <https://charbelnemnom.com/sentinel-threat-intelligence-advanced-modeling/#Method_2_Using_Sentinel_REST_API>. This has the advantage that also rules not modified or firing incidents recently will be checked against references to the `ThreatIntelligenceIndicator` table.
+
 ## Hunt Tags
 
 * **Author:** [Nicola Suter](https://nicolasuter.ch)
