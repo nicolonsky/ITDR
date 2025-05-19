@@ -36,6 +36,19 @@ union
 
 Charbel Nemnom published a nice snippet leveraging the REST API to identify matches: <https://charbelnemnom.com/sentinel-threat-intelligence-advanced-modeling/#Method_2_Using_Sentinel_REST_API>. This has the advantage that also rules not modified or firing incidents recently will be checked against references to the `ThreatIntelligenceIndicator` table.
 
+```powershell
+Connect-AzAccount #-Tenant dev.nicolasuter.ch
+
+$params = @{
+	'ResourceGroupName' = '<rg>'
+	'WorkspaceName' = '<workspace>
+}
+
+Get-AzSentinelAlertRule @params | Where-Object {$_.Query -match 'ThreatIntelligenceIndicator'} `
+	| Select-Object -Property DisplayName, Enabled
+```
+![image](https://github.com/user-attachments/assets/1a9e1132-3a51-467e-8f14-a979933d1cb7)
+
 ## Hunt Tags
 
 * **Author:** [Nicola Suter](https://nicolasuter.ch)
