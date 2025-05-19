@@ -7,10 +7,12 @@ The following query provides an example on how to investigate user activity with
 ## Sentinel or Unified SecOps Portal
 
 ```kusto
-let InvestigtionSessionId = '003e2259-5583-a75a-59e3-67bed641057e';
+let InvestigtionSessionId = '00406c49-6e50-4d97-3a65-780c9c0d8642';
+let LookBack = 190d;
 union
     (
     CloudAppEvents
+    | where TimeGenerated > ago(LookBack)
     | extend SessionId = tostring(RawEventData.AppAccessContext.AADSessionId)
     | where SessionId =~ InvestigtionSessionId
     | extend UniqueTokenIdentifier = tostring(RawEventData.AppAccessContext.UniqueTokenId)
@@ -24,6 +26,7 @@ union
     ),
     (
     MicrosoftGraphActivityLogs
+    | where TimeGenerated > ago(LookBack)
     | project-rename UniqueTokenIdentifier= SignInActivityId
     | join kind=inner (
         union SigninLogs, AADNonInteractiveUserSignInLogs
