@@ -41,7 +41,7 @@ Connect-AzAccount #-Tenant dev.nicolasuter.ch
 
 $params = @{
 	'ResourceGroupName' = '<rg>'
-	'WorkspaceName' = '<workspace>
+	'WorkspaceName' = '<workspace>'
 }
 
 Get-AzSentinelAlertRule @params | Where-Object {$_.Query -match 'ThreatIntelligenceIndicator'} `
