@@ -7,7 +7,7 @@ KQL Query to find servers running Entra Connect Sync (aka the good old Azure AD 
 ### Defender XDR
 ```kusto
 DeviceTvmSoftwareInventory
-| where SoftwareName == @"microsoft_azure_ad_connect"
+| where SoftwareName in (@"microsoft_entra_connect_sync", @"microsoft_azure_ad_connect")
 | project DeviceName, SoftwareName, SoftwareVersion
 ```
 
@@ -19,12 +19,24 @@ let EntraConnectVersions = datatable (SoftwareVersion: string, SupportEndDate: d
     "2.2.1.0", datetime("2024-10-11"),
     "2.2.8.0", datetime("2024-12-12"),
     "2.3.2.0", datetime("2025-02-21"),
-    "2.3.6.0", datetime("2025-04-01")
+    "2.3.6.0", datetime("2025-04-01"),
+    "2.3.8.0", datetime("2025-04-30"),
+    "2.3.20.0", datetime("2025-04-30"),
+    "2.4.18.0", datetime("2025-10-09"),
+    "2.4.21.0", datetime("2025-11-15"),
+    "2.4.27.0", datetime("2026-01-15"),
+    "2.4.129.0", datetime("2026-03-27"),
+    "2.4.131.0", datetime("2026-05-26"),
+    "2.5.3.0", datetime("2026-07-31"),
+    "2.5.76.0", datetime("2026-09-01")
 ];
+let LatestVersion = toscalar(EntraConnectVersions
+    | summarize arg_max(SoftwareVersion, *)
+    | project SoftwareVersion);
 DeviceTvmSoftwareInventory
-| where SoftwareName == @"microsoft_azure_ad_connect"
+| where SoftwareName in (@"microsoft_entra_connect_sync", @"microsoft_azure_ad_connect")
 | lookup EntraConnectVersions on SoftwareVersion
-| extend isSupported = tostring(toboolean(isnotempty(SupportEndDate) and datetime_diff('day', SupportEndDate, now()) > 0))
+| extend isSupported = tostring(toboolean(isnotempty(SupportEndDate) and datetime_diff('day', SupportEndDate, now()) > 0) or (parse_version(SoftwareVersion) > parse_version(LatestVersion)))
 | project DeviceName, SoftwareName, SoftwareVersion, SupportEndDate, isSupported
 ```
 
