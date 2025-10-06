@@ -9,9 +9,9 @@ let AffectedApps = dynamic([
     'c44b4083-3bb0-49c1-b47d-974e53cbdf3c', // Azure portal
     'c44b4083-3bb0-49c1-b47d-974e53cbdf3c', // Microsoft Entra admin center
     'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' // Microsoft Intune admin center
-    // Early 2025 '04b07795-8ddb-461a-bbee-02f9e1bf7b46', // Azure command-line interface (Azure CLI)
-    // Early 2025 '1950a258-227b-4e31-a9cf-717495945fc2', // Azure PowerShell
-    // Early 2025 '0c1307d4-29d6-4389-a11c-5cbe7f65d7fa' // Azure mobile app 
+    '04b07795-8ddb-461a-bbee-02f9e1bf7b46', // Azure command-line interface (Azure CLI)
+    '1950a258-227b-4e31-a9cf-717495945fc2', // Azure PowerShell
+    '0c1307d4-29d6-4389-a11c-5cbe7f65d7fa' // Azure mobile app 
     ]);
 union SigninLogs, AADNonInteractiveUserSignInLogs
 | where TimeGenerated > ago(90d)
@@ -31,9 +31,9 @@ let AffectedApps = dynamic([
     'c44b4083-3bb0-49c1-b47d-974e53cbdf3c', // Azure portal
     'c44b4083-3bb0-49c1-b47d-974e53cbdf3c', // Microsoft Entra admin center
     'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' // Microsoft Intune admin center
-    // Early 2025 '04b07795-8ddb-461a-bbee-02f9e1bf7b46', // Azure command-line interface (Azure CLI)
-    // Early 2025 '1950a258-227b-4e31-a9cf-717495945fc2', // Azure PowerShell
-    // Early 2025 '0c1307d4-29d6-4389-a11c-5cbe7f65d7fa' // Azure mobile app 
+    '04b07795-8ddb-461a-bbee-02f9e1bf7b46', // Azure command-line interface (Azure CLI)
+    '1950a258-227b-4e31-a9cf-717495945fc2', // Azure PowerShell
+    '0c1307d4-29d6-4389-a11c-5cbe7f65d7fa' // Azure mobile app 
     ]);
 union SigninLogs, AADNonInteractiveUserSignInLogs
 | where TimeGenerated > ago(90d)
