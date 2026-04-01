@@ -12,6 +12,10 @@
     "Name": "ACS FIDO Authenticator NFC"
   },
   {
+    "AAGuid": "cb4f796c-a20a-af9e-d639-213c1ec247f3",
+    "Name": "ACS PocketKey+ Bio"
+  },
+  {
     "AAGuid": "5ca1ab1e-fa57-1337-f1d0-a117371ca702",
     "Name": "Allthenticator Android App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers"
   },
@@ -188,11 +192,11 @@
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Key"
   },
   {
-    "AAGuid": "d384db22-4d50-ebde-2eac-5765cf1e2a44",
+    "AAGuid": "20f0be98-9af9-986a-4b42-8eca4acb28e4",
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
-    "AAGuid": "20f0be98-9af9-986a-4b42-8eca4acb28e4",
+    "AAGuid": "d384db22-4d50-ebde-2eac-5765cf1e2a44",
     "Name": "Excelsecu eSecu FIDO2 Fingerprint Security Key"
   },
   {
@@ -204,12 +208,12 @@
     "Name": "Excelsecu eSecu FIDO2 NFC Security Key"
   },
   {
-    "AAGuid": "0d9b2e56-566b-c393-2940-f821b7f15d6d",
-    "Name": "Excelsecu eSecu FIDO2 Pro Security Key"
-  },
-  {
     "AAGuid": "bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a",
     "Name": "Excelsecu eSecu FIDO2 PRO Security Key"
+  },
+  {
+    "AAGuid": "0d9b2e56-566b-c393-2940-f821b7f15d6d",
+    "Name": "Excelsecu eSecu FIDO2 Pro Security Key"
   },
   {
     "AAGuid": "f573f209-b7fb-b261-671a-d7cf624cc812",
@@ -300,6 +304,10 @@
     "Name": "FT-JCOS FIDO Fingerprint Card"
   },
   {
+    "AAGuid": "7a53c643-9dec-4219-b3a4-f9d24aca4e12",
+    "Name": "G+D StarKey FIDO2-NFC"
+  },
+  {
     "AAGuid": "0db01cd6-5618-455b-bb46-1ec203d3213e",
     "Name": "GoldKey Security Token"
   },
@@ -324,11 +332,11 @@
     "Name": "GSTAG OAK FIDO2 Authenticator"
   },
   {
-    "AAGuid": "0b8b05a4-ebd4-4b0b-8f5f-33d7b6e606ab",
+    "AAGuid": "2a55aee6-27cb-42c0-bc6e-04efe999e88a",
     "Name": "HID Crescendo 4000"
   },
   {
-    "AAGuid": "2a55aee6-27cb-42c0-bc6e-04efe999e88a",
+    "AAGuid": "0b8b05a4-ebd4-4b0b-8f5f-33d7b6e606ab",
     "Name": "HID Crescendo 4000"
   },
   {
@@ -364,11 +372,11 @@
     "Name": "HID Crescendo Key V2"
   },
   {
-    "AAGuid": "87c13177-85d6-40ac-8c61-fe7ab3de9dfb",
+    "AAGuid": "7991798a-a7f3-487f-98c0-3faf7a458a04",
     "Name": "HID Crescendo Key V3"
   },
   {
-    "AAGuid": "7991798a-a7f3-487f-98c0-3faf7a458a04",
+    "AAGuid": "87c13177-85d6-40ac-8c61-fe7ab3de9dfb",
     "Name": "HID Crescendo Key V3"
   },
   {
@@ -408,11 +416,11 @@
     "Name": "ID-One Card"
   },
   {
-    "AAGuid": "f2145e86-211e-4931-b874-e22bba7d01cc",
+    "AAGuid": "82b0a720-127a-4788-b56d-d1d4b2d82eac",
     "Name": "ID-One Key"
   },
   {
-    "AAGuid": "82b0a720-127a-4788-b56d-d1d4b2d82eac",
+    "AAGuid": "f2145e86-211e-4931-b874-e22bba7d01cc",
     "Name": "ID-One Key"
   },
   {
@@ -484,11 +492,11 @@
     "Name": "KeyVault Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
-    "AAGuid": "ec31b4cc-2acc-4b8e-9c01-bade00ccbe26",
+    "AAGuid": "4b3f8944-d4f2-4d21-bb19-764a986ec160",
     "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
-    "AAGuid": "4b3f8944-d4f2-4d21-bb19-764a986ec160",
+    "AAGuid": "ec31b4cc-2acc-4b8e-9c01-bade00ccbe26",
     "Name": "KeyXentic FIDO2 Secp256R1 FIDO2 CTAP2 Authenticator"
   },
   {
@@ -624,11 +632,11 @@
     "Name": "OpenSK authenticator"
   },
   {
-    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
+    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
     "Name": "Pone Biometrics OFFPAD Authenticator"
   },
   {
-    "AAGuid": "09591fc6-9811-48f7-8f57-b9f23df6413f",
+    "AAGuid": "69700f79-d1fb-472e-bd9b-a3a3b9a9eda0",
     "Name": "Pone Biometrics OFFPAD Authenticator"
   },
   {
@@ -664,6 +672,18 @@
     "Name": "Samsung Pass"
   },
   {
+    "AAGuid": "9a272558-5cfa-4424-be37-65509677b77d",
+    "Name": "SECORA ID Key S USB by Infineon Consumer Edition"
+  },
+  {
+    "AAGuid": "3e9db280-256a-4e17-b08e-19d79e9be166",
+    "Name": "SECORA ID V2 by Infineon Pay Edition"
+  },
+  {
+    "AAGuid": "005b20e1-f146-4b87-8f3a-36848ff60ea6",
+    "Name": "SECORA ID V2 by Infineon Pay Edition M"
+  },
+  {
     "AAGuid": "4e2ddbc2-2687-4709-8551-cb66c9776bfe",
     "Name": "SECORA ID V2 FIDO2.1 L1"
   },
@@ -680,15 +700,15 @@
     "Name": "Security Key by Yubico"
   },
   {
-    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
-    "Name": "Security Key by Yubico with NFC"
-  },
-  {
     "AAGuid": "6d44ba9b-f6ec-2e49-b930-0c8fe920cb73",
     "Name": "Security Key by Yubico with NFC"
   },
   {
-    "AAGuid": "e77e3c64-05e3-428b-8824-0cbeb04b829d",
+    "AAGuid": "149a2021-8ef6-4133-96b8-81f8d5b7f1f5",
+    "Name": "Security Key by Yubico with NFC"
+  },
+  {
+    "AAGuid": "b7d3f68e-88a6-471e-9ecf-2df26d041ede",
     "Name": "Security Key NFC by Yubico"
   },
   {
@@ -696,11 +716,11 @@
     "Name": "Security Key NFC by Yubico"
   },
   {
-    "AAGuid": "b7d3f68e-88a6-471e-9ecf-2df26d041ede",
+    "AAGuid": "e77e3c64-05e3-428b-8824-0cbeb04b829d",
     "Name": "Security Key NFC by Yubico"
   },
   {
-    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
+    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
@@ -708,7 +728,7 @@
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
-    "AAGuid": "0bb43545-fd2c-4185-87dd-feb0b2916ace",
+    "AAGuid": "47ab2fb4-66ac-4184-9ae1-86be814012d5",
     "Name": "Security Key NFC by Yubico - Enterprise Edition"
   },
   {
@@ -956,11 +976,11 @@
     "Name": "YubiKey 5 CCN Series with NFC (Enterprise Profile)"
   },
   {
-    "AAGuid": "57f7de54-c807-4eab-b1c6-1c9be7984e92",
+    "AAGuid": "73bb0cd4-e502-49b8-9c6f-b59445bf720b",
     "Name": "YubiKey 5 FIPS Series"
   },
   {
-    "AAGuid": "73bb0cd4-e502-49b8-9c6f-b59445bf720b",
+    "AAGuid": "57f7de54-c807-4eab-b1c6-1c9be7984e92",
     "Name": "YubiKey 5 FIPS Series"
   },
   {
@@ -1060,11 +1080,11 @@
     "Name": "YubiKey 5 Series with Lightning Preview"
   },
   {
-    "AAGuid": "a25342c0-3cdc-4414-8e46-f4807fca511c",
+    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "2fc0579f-8113-47ea-b116-bb5a8db9202a",
+    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
@@ -1072,7 +1092,7 @@
     "Name": "YubiKey 5 Series with NFC"
   },
   {
-    "AAGuid": "fa2b99dc-9e39-4257-8f92-4a30d23c4118",
+    "AAGuid": "a25342c0-3cdc-4414-8e46-f4807fca511c",
     "Name": "YubiKey 5 Series with NFC"
   },
   {
@@ -1084,11 +1104,11 @@
     "Name": "YubiKey 5 Series with NFC - Enhanced PIN (Enterprise Profile)"
   },
   {
-    "AAGuid": "1ac71f64-468d-4fe0-bef1-0e5f2f551f18",
+    "AAGuid": "6ab56fad-881f-4a43-acb2-0be065924522",
     "Name": "YubiKey 5 Series with NFC (Enterprise Profile)"
   },
   {
-    "AAGuid": "6ab56fad-881f-4a43-acb2-0be065924522",
+    "AAGuid": "1ac71f64-468d-4fe0-bef1-0e5f2f551f18",
     "Name": "YubiKey 5 Series with NFC (Enterprise Profile)"
   },
   {
@@ -1112,7 +1132,7 @@
     "Name": "YubiKey Bio Series - FIDO Edition"
   },
   {
-    "AAGuid": "83c47309-aabb-4108-8470-8be838b573cb",
+    "AAGuid": "8c39ee86-7f9a-4a95-9ba3-f6b097e5c2ee",
     "Name": "YubiKey Bio Series - FIDO Edition (Enterprise Profile)"
   },
   {
@@ -1120,7 +1140,7 @@
     "Name": "YubiKey Bio Series - FIDO Edition (Enterprise Profile)"
   },
   {
-    "AAGuid": "8c39ee86-7f9a-4a95-9ba3-f6b097e5c2ee",
+    "AAGuid": "83c47309-aabb-4108-8470-8be838b573cb",
     "Name": "YubiKey Bio Series - FIDO Edition (Enterprise Profile)"
   },
   {
@@ -1136,11 +1156,11 @@
     "Name": "YubiKey Bio Series - Multi-protocol Edition"
   },
   {
-    "AAGuid": "97e6a830-c952-4740-95fc-7c78dc97ce47",
+    "AAGuid": "6ec5cff2-a0f9-4169-945b-f33b563f7b99",
     "Name": "YubiKey Bio Series - Multi-protocol Edition (Enterprise Profile)"
   },
   {
-    "AAGuid": "6ec5cff2-a0f9-4169-945b-f33b563f7b99",
+    "AAGuid": "97e6a830-c952-4740-95fc-7c78dc97ce47",
     "Name": "YubiKey Bio Series - Multi-protocol Edition (Enterprise Profile)"
   },
   {
