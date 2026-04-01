@@ -5,6 +5,16 @@ KQL Query to find servers running Entra Connect Sync (aka the good old Azure AD 
 ## Query
 
 ### Defender XDR
+Query the TVM software inventory:
+
+```kusto
+DeviceTvmSoftwareInventory
+| where SoftwareName in (@"microsoft_entra_connect_sync", @"microsoft_azure_ad_connect")
+| project DeviceName, SoftwareName, SoftwareVersion
+```
+
+Enriched query including support information (might wanna double check this one /w Microsoft docs):
+
 ```kusto
 // https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/reference-connect-version-history#retiring-microsoft-entra-connect-2x-versions
 let EntraConnectVersions = datatable (SoftwareVersion: string, SupportEndDate: datetime) [ 
