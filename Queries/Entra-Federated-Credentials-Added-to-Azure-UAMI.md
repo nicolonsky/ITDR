@@ -14,10 +14,10 @@ AuditLogs
 | mv-expand TargetResources
 | extend ServicePrincipalName = tostring(TargetResources.displayName)
 | extend ServicePrincipalId = tostring(TargetResources.id)
-| extend _MP = todynamic(TargetResources.modifiedProperties)
-| mv-expand _MP
+| mv-expand _MP = todynamic(TargetResources.modifiedProperties)
+// Little hack to only get modified creds & properly access the array
+| extend FederatedCredentials = set_difference(parse_json(tostring(_MP.newValue)), parse_json(tostring(_MP.oldValue)))
 | where _MP.displayName == 'FederatedIdentityCredentials'
-| extend FederatedCredentials = parse_json(tostring(_MP.newValue)) // Little hack to properly access the array
 | mv-expand FederatedCredentials
 | evaluate bag_unpack(FederatedCredentials, "FederatedCredential")
 | project-away _*
