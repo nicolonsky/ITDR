@@ -9,8 +9,9 @@ Tracking additions of federated credentials to Azure User Assigned Managed Ident
 AuditLogs
 | where TimeGenerated > ago(90d)
 | where OperationName == "Update service principal"
-| extend Actor = tostring(coalesce(InitiatedBy.user.userPrincipalName, InitiatedBy.app.displayName ))
-| extend ActorId = tostring(coalesce(InitiatedBy.user.id, InitiatedBy.app.servicePrincipalId ))
+| extend Actor = tostring(coalesce(InitiatedBy.user.userPrincipalName, InitiatedBy.app.displayName))
+| extend ActorId = tostring(coalesce(InitiatedBy.user.id, InitiatedBy.app.servicePrincipalId))
+| extend IpAddress = tostring(coalesce(InitiatedBy.user.ipAddress, InitiatedBy.app.ipAddress))
 | mv-expand TargetResources
 | extend ServicePrincipalName = tostring(TargetResources.displayName)
 | extend ServicePrincipalId = tostring(TargetResources.id)
@@ -20,7 +21,18 @@ AuditLogs
 | where _MP.displayName == 'FederatedIdentityCredentials'
 | mv-expand FederatedCredentials
 | evaluate bag_unpack(FederatedCredentials, "FederatedCredential")
-| project-away _*
+| project-away
+    _*,
+    FederatedCredentialClaimsMatchingExpressionLanguageVersion,
+    FederatedCredentialEncodingVersion
+| project-reorder
+    TimeGenerated,
+    ServicePrincipalName,
+    ServicePrincipalId,
+    FederatedCredential*,
+    Actor,
+    ActorId,
+    IpAddress
 ```
 
 ### Azure Activity Logs
