@@ -17,18 +17,21 @@ AuditLogs
 | extend ActorId = tostring(coalesce(InitiatedBy.user.id, InitiatedBy.app.id))
 | extend IpAddress = tostring(coalesce(InitiatedBy.user.ipAddress, InitiatedBy.app.ipAddress))
 | mv-expand _MP = todynamic(TargetResources.modifiedProperties)
+// Little hack to only get modified creds & properly access the array
+| extend FederatedCredentials = set_difference(parse_json(tostring(_MP.newValue)), parse_json(tostring(_MP.oldValue)))
 | where _MP.displayName == 'FederatedIdentityCredentials'
-// Little hack to properly access the array
-| extend FederatedCredentials = parse_json(tostring(_MP.newValue))
 | mv-expand FederatedCredentials
 // Enrich GitHub Federation Details
 | parse FederatedCredentials.Subject with * "repo:" _GitHubOrganization: string "@" _GitHubOrganizationImmutableId: int "/" _GitHubRepository: string "@" _GitHubRepositoryImmutableId: int ":ref:" _GitHubRefs: string
-| extend GitHubConfig = iif(
-                            FederatedCredentials.Issuer == "https://token.actions.githubusercontent.com",
-                            bag_pack("Organization", _GitHubOrganization, "OrganizationId", _GitHubOrganizationImmutableId, "Repository", _GitHubRepository, "RepositoryId", _GitHubRepositoryImmutableId),
-                            ""
+| extend GitHubConfig = todynamic(
+                            iif(
+                                FederatedCredentials.Issuer == "https://token.actions.githubusercontent.com",
+                                bag_pack("Organization", _GitHubOrganization, "OrganizationId", _GitHubOrganizationImmutableId, "Repository", _GitHubRepository, "RepositoryId", _GitHubRepositoryImmutableId),
+                                "[]"
+                            )
                         )
 | evaluate bag_unpack(FederatedCredentials, "FederatedCredential")
+//| evaluate bag_unpack(GitHubConfig)
 | project-away
     _*,
     FederatedCredentialClaimsMatchingExpressionLanguageVersion,
