@@ -1,0 +1,46 @@
+name: Debug OIDC token
+
+on:
+  workflow_dispatch:
+    inputs:
+      audience:
+        description: "Audience (aud) to request. Leave empty for GitHub's default."
+        required: false
+        default: "api://AzureADTokenExchange"
+
+permissions:
+  id-token: write # required to request the OIDC token
+  contents: read
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decode GitHub OIDC token
+        uses: actions/github-script@v7
+        env:
+          AUDIENCE: ${{ inputs.audience }}
+        with:
+          script: |
+            const audience = process.env.AUDIENCE || undefined;
+
+            // Decode a JWT without verifying it (debugging only).
+            function parseJwt(token) {
+              const [header, payload] = token.split('.');
+              const decode = part =>
+                JSON.parse(Buffer.from(part, 'base64url').toString('utf8'));
+              return JSON.stringify(
+                { header: decode(header), payload: decode(payload) },
+                null,
+                2
+              );
+            }
+
+            try {
+              const token = await core.getIDToken(audience);
+              core.info('Acquired GitHub OIDC Token');
+              core.info(parseJwt(token));
+              // Never log the raw token itself; only the decoded claims.
+            } catch (error) {
+              core.setFailed(`Failed to get or decode OIDC token: ${error.message}`);
+            }
